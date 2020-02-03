@@ -1,1 +1,103 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: upgrade-lights, sans-serif;
+}
+
+body {
+  background-color: #262626;
+}
+
+.imgWrapper {
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 3fr 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template: auto 3fr 1fr / 1fr;
+  height: 80vh;
+  width: 100vw;
+  background-image: url(https://source.unsplash.com/collection/9481007);
+  background-size: cover;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #262626;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+nav .active {
+  border-bottom: 2px solid #BF9C8F;
+}
+
+nav a {
+  font-family: upgrade, sans-serif;
+  font-weight: 400;
+  color: #F2EAE4;
+  text-decoration: none;
+  margin: 0 1em;
+}
+
+nav a:first-child {
+  margin-right: auto;
+}
+
+nav a:last-child {
+  margin-right: 5em;
+}
+
+nav #logo {
+  max-height: 60px;
+  width: 100px;
+  padding-top: 0.5em;
+}
+
+nav #basket {
+  max-height: 30px;
+  margin: 0;
+  width: 100px;
+}
+
+.headerPic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  text-align: center;
+  background-image: url(../brownbrush.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 600px;
+  color: #F2EAE4;
+}
+
+.headerPic h1 {
+  font-family: flood-std, sans-serif;
+  font-size: 60px;
+}
+
+.headerPic h2 {
+  font-size: 20px;
+}
+/*# sourceMappingURL=main.css.map */
