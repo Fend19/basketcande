@@ -1,2 +1,9 @@
-// Random pictures for header
-// https://unsplash.com/collections/9481007/webshop
+{
+  "products" [
+    {
+      'title' : 'Green Landscape';
+      'price' : 199;
+      'image' :'/images/product-pictures/green-landscape.jpg';
+    }
+  }]
+}

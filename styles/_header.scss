@@ -3,8 +3,11 @@ header {
   grid-template: auto 1f / 1fr;
   height: 80vh;
   width: 100vw;
-  background-image: url(https://source.unsplash.com/collection/9481007);
+  background-image: url(/images/background.jpg);
+  background: rgb(140, 118, 109);
+  background: linear-gradient(to bottom, rgba(140, 118, 109, 0.605) 24%, rgba(38, 38, 38, 0.79) 100%), url(/images/background.jpg);
   background-size: cover;
+  background-position: center;
 }
 
 nav {
@@ -53,18 +56,20 @@ nav {
   justify-content: center;
   align-self: center;
   text-align: center;
-  background-image: url(../brownbrush.png);
+  background-image: url(/images/brownbrush.png);
+
   background-repeat: no-repeat;
   background-position: center;
   height: 600px;
-  color: #F2EAE4;
 
   h1 {
     font-family: flood-std, sans-serif;
     font-size: 60px;
+    color: #262626
   }
 
   h2 {
     font-size: 20px;
+    color: #F2EAE4;
   }
 }
