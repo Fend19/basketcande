@@ -17,9 +17,9 @@ body {
 header {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: auto 3fr 1fr;
+  -ms-grid-rows: auto 1f;
   -ms-grid-columns: 1fr;
-      grid-template: auto 3fr 1fr / 1fr;
+      grid-template: auto 1f / 1fr;
   height: 80vh;
   width: 100vw;
   background-image: url(https://source.unsplash.com/collection/9481007);
@@ -99,5 +99,39 @@ nav #basket {
 
 .headerPic h2 {
   font-size: 20px;
+}
+
+.categories {
+  margin: auto;
+  text-align: center;
+}
+
+.categories h2 {
+  font-family: upgrade, sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  color: #F2EAE4;
+  padding: 0.8em 0 0.2em 0;
+}
+
+.categories button {
+  height: 30px;
+  width: 150px;
+  border: 1px solid #F2EAE4;
+  background-color: #BF9C8F;
+  color: #262626;
+  font-family: upgrade, sans-serif;
+  font-weight: 400;
+  margin: 0 0.5em;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.categories button:hover {
+  -webkit-transition: ease-in 0.5s;
+  transition: ease-in 0.5s;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 /*# sourceMappingURL=main.css.map */
