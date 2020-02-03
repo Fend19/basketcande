@@ -14,7 +14,7 @@ body {
   height: 100%;
 }
 
-header {
+.firstPageHeader {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: auto 1f;
@@ -22,7 +22,6 @@ header {
       grid-template: auto 1f / 1fr;
   height: 80vh;
   width: 100vw;
-  background-image: url(/images/background.jpg);
   background: #8c766d;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(24%, rgba(140, 118, 109, 0.406)), to(rgba(38, 38, 38, 0.79))), url(/images/background.jpg);
   background: linear-gradient(to bottom, rgba(140, 118, 109, 0.406) 24%, rgba(38, 38, 38, 0.79) 100%), url(/images/background.jpg);
@@ -138,5 +137,24 @@ nav #basket {
   transition: ease-in 0.5s;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.confirmPageBody {
+  background-size: cover;
+  background: #8c766d;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(24%, rgba(140, 118, 109, 0.406)), to(rgba(38, 38, 38, 0.79))), url(/images/nordwood-themes-KcsKWw77Ovw-unsplash.jpg);
+  background: linear-gradient(to bottom, rgba(140, 118, 109, 0.406) 24%, rgba(38, 38, 38, 0.79) 100%), url(/images/nordwood-themes-KcsKWw77Ovw-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  max-height: 200vh;
+}
+
+.mainConfirmPage h1 {
+  padding-top: 2em;
+  text-align: center;
+  font-family: flood-std, sans-serif;
+  font-size: 60px;
+  color: #262626;
 }
 /*# sourceMappingURL=main.css.map */

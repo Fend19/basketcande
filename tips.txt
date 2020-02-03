@@ -1,0 +1,2 @@
+Create a localStorageSync function *Thanks Patric*
+And a function for check localStorage when window is ready. 
