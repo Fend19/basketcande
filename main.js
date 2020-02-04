@@ -32,6 +32,10 @@ function productContent(products){
         let productImage = document.createElement('img');
         productImage.setAttribute('src', element.image);
         document.querySelector("[class=product-" + productCounter + "]").appendChild(productImage);
+        // Creating product "information"
+        let productLorem = document.createElement('p');
+        productLorem.innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.';
+        document.querySelector("[class=product-" + productCounter + "]").appendChild(productLorem);
         // Creating product-pricetag
         let productPrice = document.createElement('h4');
         productPrice.innerText = 'Price: ' + element.price;
