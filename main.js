@@ -1,5 +1,5 @@
 // Börjar med skapandet av varje produkts ruta - Christopher
-let productSection = document.querySelector('.posterMenu');
+let productsArticle = document.querySelector('.posterArticle');
 
 let productCounter = 0; // Needed to find index of products in forEach on row 20.
 
@@ -18,8 +18,13 @@ function productContent(products){
     console.log(productArray[0]);
 
     productArray.forEach(element => {
-        console.log(element);
-        
+        let productSection = document.createElement('section', {id: productCounter});
+        productSection.className = 'product-' + productCounter;
+        document.querySelector('.posterArticle').appendChild(productSection);
+
+
+        console.log(productCounter);
+        productCounter++; // Variable for the index of object in productArray
     });
 }
 
