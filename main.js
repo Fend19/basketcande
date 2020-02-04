@@ -18,10 +18,27 @@ function productContent(products){
     console.log(productArray[0]);
 
     productArray.forEach(element => {
-        let productSection = document.createElement('section', {id: productCounter});
+        // Creating container for each product
+        let productSection = document.createElement('section');
         productSection.className = 'product-' + productCounter;
         document.querySelector('.posterArticle').appendChild(productSection);
-
+            // *****Creating elements and placing them in productcontainer(aka productSection)*****
+        // Creating product-headline
+        let productHeadline = document.createElement('h3');
+        productHeadline.innerText = element.title;
+        document.querySelector("[class=product-" + productCounter + "]").appendChild(productHeadline);
+        console.log(element.title);
+        // Creating product-image
+        let productImage = document.createElement('img');
+        productImage.setAttribute('src', element.image);
+        document.querySelector("[class=product-" + productCounter + "]").appendChild(productImage);
+        // Creating product-pricetag
+        let productPrice = document.createElement('h4');
+        productPrice.innerText = element.price;
+        document.querySelector("[class=product-" + productCounter + "]").appendChild(productPrice);
+        console.log(element.price);
+        // Creating button to buy product
+        
 
         console.log(productCounter);
         productCounter++; // Variable for the index of object in productArray
