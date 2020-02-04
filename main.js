@@ -34,11 +34,13 @@ function productContent(products){
         document.querySelector("[class=product-" + productCounter + "]").appendChild(productImage);
         // Creating product-pricetag
         let productPrice = document.createElement('h4');
-        productPrice.innerText = element.price;
+        productPrice.innerText = 'Price: ' + element.price;
         document.querySelector("[class=product-" + productCounter + "]").appendChild(productPrice);
         console.log(element.price);
-        // Creating button to buy product
-        
+        // Creating buy-button for product
+        let productButtonBuy = document.createElement('button');
+        productButtonBuy.innerText = 'Add to Cart';
+        document.querySelector("[class=product-" + productCounter + "]").appendChild(productButtonBuy);
 
         console.log(productCounter);
         productCounter++; // Variable for the index of object in productArray
