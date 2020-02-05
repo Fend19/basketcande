@@ -199,9 +199,9 @@ nav #basket {
 .posterArticle section .productTextInfo input {
   width: 50px;
   height: 30px;
-  background-color: #BF9C8F;
+  background-color: #262626;
   border-radius: 5px;
-  color: #262626;
+  color: #BF9C8F;
   border: #262626 solid 1px;
   -ms-grid-column-align: end;
       justify-self: end;
@@ -217,9 +217,9 @@ nav #basket {
 .buyButtonStyler {
   width: 120px;
   height: 30px;
-  background-color: #BF9C8F;
+  background-color: #262626;
   border-radius: 5px;
-  color: #262626;
+  color: #BF9C8F;
   border: #262626 solid 1px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
