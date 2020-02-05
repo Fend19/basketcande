@@ -25,6 +25,7 @@ function productContent(products) {
         let productTextInfo = document.createElement('section');
         productTextInfo.className = 'productTextInfo'
         let productImgWrapper = document.createElement('div');
+        productImgWrapper.className = 'productImgWrapper';
 
         // Creating product-image
         let productImage = document.createElement('img');

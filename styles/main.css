@@ -11,7 +11,7 @@ body {
 
 .imgWrapper {
   width: 100%;
-  max-height: 300px;
+  max-height: 260px;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -212,6 +212,13 @@ nav #basket {
   font-weight: 400;
   cursor: pointer;
   padding-left: 1em;
+}
+
+.posterArticle section .productImgWrapper {
+  border: 5px solid black;
+  padding: 2em;
+  background: whitesmoke;
+  margin-bottom: 1em;
 }
 
 .buyButtonStyler {
