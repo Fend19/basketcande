@@ -186,6 +186,7 @@ nav #basket {
 }
 
 .posterArticle section .productTextInfo h4 {
+  font-family: upgrade, sans-serif;
   -ms-grid-column-align: start;
       justify-self: start;
   -ms-flex-item-align: center;
