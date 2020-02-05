@@ -1,6 +1,5 @@
 {
-  "products": [
-    {
+  "products": [{
       "title": "Green Landscape",
       "price": 199,
       "image": "/images/product-pictures/green-landscape.jpg"
