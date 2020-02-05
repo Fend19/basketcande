@@ -12,8 +12,13 @@ fetch('main.json')
 
 function productContent(products){
     let productArray = products.products;
-
+    console.log(productArray);
+    
     productArray.forEach(element => {
+        console.log(element.category);
+        
+
+
         // Creating container for each product
         let productSection = document.createElement('section');
         productSection.className = 'product-' + productCounter;
@@ -41,6 +46,7 @@ function productContent(products){
         let productAmount = document.createElement('input');
         productAmount.type = 'number';
         productAmount.min = 1;
+        productAmount.value = 1;
         productAmount.placeholder = 'Amount';
         productAmount.className = productCounter + '-input';
         document.querySelector("[class=product-" + productCounter + "]").appendChild(productAmount);
@@ -50,15 +56,18 @@ function productContent(products){
         productButtonBuy.innerText = 'Add to Cart';
         document.querySelector("[class=product-" + productCounter + "]").appendChild(productButtonBuy);
 
-          // Adding eventlistener to the buybutton to get value of quantity selected
+            // Adding eventlistener to the buybutton to get value of quantity selected
         let amountSelected = 0;
         productButtonBuy.addEventListener('click', function(){
             amountSelected += parseInt(productAmount.value);
             console.log(amountSelected);
             
-        })
+        });
+
+            // Added category nature/animal as class to productSections
+        productSection.classList.add(element.category);
 
         console.log(productCounter);
         productCounter++; // Variable for the index of object in productArray
     });
-}
+};
