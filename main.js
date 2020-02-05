@@ -66,8 +66,49 @@ function productContent(products){
 
             // Added category nature/animal as class to productSections
         productSection.classList.add(element.category);
-
-        console.log(productCounter);
+        
+        
         productCounter++; // Variable for the index of object in productArray
     });
 };
+
+
+            // Creating filtering for all/nature/animals-button
+    //Function that hides/shows classes 'nature' and 'animals'
+function sortingHat(){
+    let category = this.innerText.toString().toLowerCase();
+    let showEverything = document.querySelectorAll('.nature, .animals');
+    showEverything.forEach(element => {
+        element.hidden = false;
+    });
+    let hideNature = document.querySelectorAll('.nature');
+    let hideAnimals = document.querySelectorAll('.animals');
+    
+    if (category === 'nature') {
+        hideAnimals.forEach(element => {
+            element.hidden = true;
+        });
+        hideNature.forEach(element => {
+            element.hidden = false;
+        });
+    } else if (category === 'animals') {
+        hideNature.forEach(element => {
+        element.hidden = true;
+        });
+        hideAnimals.forEach(element => {
+            element.hidden = false;
+        });
+    };
+};
+
+            // Eventlistener for buttons that sorts the products
+let showAll = document.querySelector('.showAll');
+showAll.addEventListener('click', sortingHat);
+
+let showNature = document.querySelector('.showNature');
+showNature.addEventListener('click', sortingHat);
+
+let showAnimals = document.querySelector('.showAnimals');
+showAnimals.addEventListener('click', sortingHat);
+
+

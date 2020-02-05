@@ -10,7 +10,7 @@
       "title": "Angry Eagle",
       "price": 399,
       "image": "/images/product-pictures/angry-eagle.jpg",
-      "category": "animal"
+      "category": "animals"
     },
     {
       "title": "Boat Landscape",
@@ -34,19 +34,19 @@
       "title": "Cute Elephant",
       "price": 899,
       "image": "/images/product-pictures/cute-elephant.jpg",
-      "category": "animal"
+      "category": "animals"
     },
     {
       "title": "Flying Eagle",
       "price": 1099,
       "image": "/images/product-pictures/flying-eagle.jpg",
-      "category": "animal"
+      "category": "animals"
     },
     {
       "title": "Happy Dog",
       "price": 1499,
       "image": "/images/product-pictures/happy-dog.jpg",
-      "category": "animal"
+      "category": "animals"
     },
     {
       "title": "Ireland Landscape",
