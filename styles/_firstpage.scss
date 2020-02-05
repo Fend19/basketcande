@@ -29,3 +29,15 @@
     transform: scale(1.1);
   }
 }
+
+.posterArticle {
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr/ 1fr 1fr 1fr;
+  grid-gap: 1em;
+  padding: 4em;
+
+  section {
+    width: 100%;
+    object-fit: cover;
+  }
+}

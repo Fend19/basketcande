@@ -7,11 +7,10 @@ let productCounter = 0; // Needed to find index of products in forEach on row 20
 fetch('main.json')
     .then(resp => resp.json())
     .then(json => productContent(json))
-    .catch(err => console.log('err'))
-;
+    .catch(err => console.log('err'));
 
 
-function productContent(products){
+function productContent(products) {
     console.log(products.products[0]);
     let productArray = products.products;
     // let testar = JSON.stringify(products.products);
@@ -22,7 +21,7 @@ function productContent(products){
         let productSection = document.createElement('section');
         productSection.className = 'product-' + productCounter;
         document.querySelector('.posterArticle').appendChild(productSection);
-            // *****Creating elements and placing them in productcontainer(aka productSection)*****
+        // *****Creating elements and placing them in productcontainer(aka productSection)*****
         // Creating product-headline
         let productHeadline = document.createElement('h3');
         productHeadline.innerText = element.title;
@@ -31,6 +30,7 @@ function productContent(products){
         // Creating product-image
         let productImage = document.createElement('img');
         productImage.setAttribute('src', element.image);
+        productImage.className = 'imgWrapper';
         document.querySelector("[class=product-" + productCounter + "]").appendChild(productImage);
         // Creating product "information"
         let productLorem = document.createElement('p');
@@ -50,9 +50,3 @@ function productContent(products){
         productCounter++; // Variable for the index of object in productArray
     });
 }
-
-
-
-
-
-
