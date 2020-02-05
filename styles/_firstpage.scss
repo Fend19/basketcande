@@ -13,7 +13,7 @@
   button {
     height: 30px;
     width: 150px;
-    border: 1px solid #F2EAE4;
+    border: 1px solid #262626;
     background-color: #BF9C8F;
     color: #262626;
     font-family: upgrade, sans-serif;
@@ -35,9 +35,72 @@
   grid-template: 1fr 1fr 1fr 1fr/ 1fr 1fr 1fr;
   grid-gap: 1em;
   padding: 4em;
+  background-color: #8C766D;
+  margin-top: 2em;
 
   section {
-    width: 100%;
-    object-fit: cover;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    max-height: 500px;
+    height: 100%;
+
+    .productTextInfo {
+      padding-bottom: 1em;
+      display: grid;
+      grid-template: auto auto auto / 1fr 1fr 1fr;
+      color: #262626;
+
+      h3 {
+        grid-column: span 3;
+        font-family: flood-std, sans-serif;
+        font-size: 28px;
+      }
+
+      p {
+        grid-column: span 3;
+      }
+
+      h4 {
+        justify-self: start;
+        align-self: center;
+        font-weight: 400;
+        font-size: 24px;
+      }
+
+      input {
+        width: 50px;
+        height: 30px;
+        background-color: #BF9C8F;
+        border-radius: 5px;
+        color: #262626;
+        border: #262626 solid 1px;
+        justify-self: end;
+        align-self: center;
+        font-family: upgrade, sans-serif;
+        font-weight: 400;
+        cursor: pointer;
+        padding-left: 1em;
+      }
+
+    }
+  }
+}
+
+.buyButtonStyler {
+  width: 120px;
+  height: 30px;
+  background-color: #BF9C8F;
+  border-radius: 5px;
+  color: #262626;
+  border: #262626 solid 1px;
+  align-self: center;
+  justify-self: end;
+  font-family: upgrade, sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+
+  &:hover {
+    transition: ease-in 0.5s;
+    transform: scale(1.1);
   }
 }

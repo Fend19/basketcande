@@ -11,8 +11,12 @@ body {
 
 .imgWrapper {
   width: 100%;
+  max-height: 300px;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .firstPageHeader {
@@ -72,7 +76,7 @@ nav #logo {
 nav #basket {
   max-height: 30px;
   margin: 0;
-  width: 100px;
+  width: 30px;
 }
 
 .headerPic {
@@ -122,7 +126,7 @@ nav #basket {
 .categories button {
   height: 30px;
   width: 150px;
-  border: 1px solid #F2EAE4;
+  border: 1px solid #262626;
   background-color: #BF9C8F;
   color: #262626;
   font-family: upgrade, sans-serif;
@@ -148,12 +152,89 @@ nav #basket {
       grid-template: 1fr 1fr 1fr 1fr/ 1fr 1fr 1fr;
   grid-gap: 1em;
   padding: 4em;
+  background-color: #8C766D;
+  margin-top: 2em;
 }
 
 .posterArticle section {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr auto;
+      grid-template-rows: 1fr auto;
+  max-height: 500px;
+  height: 100%;
+}
+
+.posterArticle section .productTextInfo {
+  padding-bottom: 1em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto auto;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template: auto auto auto / 1fr 1fr 1fr;
+  color: #262626;
+}
+
+.posterArticle section .productTextInfo h3 {
+  grid-column: span 3;
+  font-family: flood-std, sans-serif;
+  font-size: 28px;
+}
+
+.posterArticle section .productTextInfo p {
+  grid-column: span 3;
+}
+
+.posterArticle section .productTextInfo h4 {
+  -ms-grid-column-align: start;
+      justify-self: start;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.posterArticle section .productTextInfo input {
+  width: 50px;
+  height: 30px;
+  background-color: #BF9C8F;
+  border-radius: 5px;
+  color: #262626;
+  border: #262626 solid 1px;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-family: upgrade, sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+  padding-left: 1em;
+}
+
+.buyButtonStyler {
+  width: 120px;
+  height: 30px;
+  background-color: #BF9C8F;
+  border-radius: 5px;
+  color: #262626;
+  border: #262626 solid 1px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  font-family: upgrade, sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.buyButtonStyler:hover {
+  -webkit-transition: ease-in 0.5s;
+  transition: ease-in 0.5s;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .confirmPageBody {
