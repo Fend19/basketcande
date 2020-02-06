@@ -112,14 +112,18 @@ function sortingHat(){
     };
 };
 
-            // Eventlistener for buttons that sorts the products
-let showAll = document.querySelector('.showAll');
-showAll.addEventListener('click', sortingHat);
-
-let showNature = document.querySelector('.showNature');
-showNature.addEventListener('click', sortingHat);
-
-let showAnimals = document.querySelector('.showAnimals');
-showAnimals.addEventListener('click', sortingHat);
+            // Eventlistener for buttons that sorts the products within if's so they dont cause errors in the shoppingcart-page
+if (document.querySelector('.showAll')) {
+    let showAll = document.querySelector('.showAll');
+    showAll.addEventListener('click', sortingHat);
+}
+if (document.querySelector('.showNature')) {
+    let showNature = document.querySelector('.showNature');
+    showNature.addEventListener('click', sortingHat);
+}
+if (document.querySelector('.showAnimals')) {
+    let showAnimals = document.querySelector('.showAnimals');
+    showAnimals.addEventListener('click', sortingHat);
+}
 
 
