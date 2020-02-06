@@ -1,75 +1,75 @@
 {
-  "products": [{
+  "a1": {
       "title": "Green Landscape",
       "price": 199,
       "image": "/images/product-pictures/green-landscape.jpg",
       "category": "nature"
     },
-    {
+
+  "a2": {
       "title": "Angry Eagle",
       "price": 399,
       "image": "/images/product-pictures/angry-eagle.jpg",
       "category": "animals"
     },
-    {
+  "a3": {
       "title": "Boat Landscape",
       "price": 749,
       "image": "/images/product-pictures/boat-landscape.jpg",
       "category": "nature"
-    },
-    {
-      "title": "Boat Sunset",
-      "price": 149,
-      "image": "/images/product-pictures/boat-sunset.jpg",
-      "category": "nature"
-    },
-    {
-      "title": "City View",
-      "price": 399,
-      "image": "/images/product-pictures/city-view.jpg",
-      "category": "nature"
-    },
-    {
-      "title": "Cute Elephant",
-      "price": 899,
-      "image": "/images/product-pictures/cute-elephant.jpg",
-      "category": "animals"
-    },
-    {
-      "title": "Flying Eagle",
-      "price": 1099,
-      "image": "/images/product-pictures/flying-eagle.jpg",
-      "category": "animals"
-    },
-    {
-      "title": "Happy Dog",
-      "price": 1499,
-      "image": "/images/product-pictures/happy-dog.jpg",
-      "category": "animals"
-    },
-    {
-      "title": "Ireland Landscape",
-      "price": 1099,
-      "image": "/images/product-pictures/ireland-landscape.jpg",
-      "category": "nature"
-    },
-    {
-      "title": "New York Stairs",
-      "price": 1199,
-      "image": "/images/product-pictures/newyork-stairs.jpg",
-      "category": "nature"
-    },
-    {
-      "title": "Night Street",
-      "price": 499,
-      "image": "/images/product-pictures/night-street.jpg",
-      "category": "nature"
-    },
-    {
-      "title": "Traffic Street",
-      "price": 1599,
-      "image": "/images/product-pictures/traffic-street.jpg",
-      "category": "nature"
-    }
-  ]
+  },
+  "a4": {
+    "title": "Boat Sunset",
+    "price": 149,
+    "image": "/images/product-pictures/boat-sunset.jpg",
+    "category": "nature"
+  },
+  "a5": {
+    "title": "City View",
+    "price": 399,
+    "image": "/images/product-pictures/city-view.jpg",
+    "category": "nature"
+  },
+  "a6": {
+    "title": "Cute Elephant",
+    "price": 899,
+    "image": "/images/product-pictures/cute-elephant.jpg",
+    "category": "animals"
+  },
+  "a7": {
+    "title": "Flying Eagle",
+    "price": 1099,
+    "image": "/images/product-pictures/flying-eagle.jpg",
+    "category": "animals"
+  },
+  "a8": {
+    "title": "Happy Dog",
+    "price": 1499,
+    "image": "/images/product-pictures/happy-dog.jpg",
+    "category": "animals"
+  },
+  "a9": {
+    "title": "Ireland Landscape",
+    "price": 1099,
+    "image": "/images/product-pictures/ireland-landscape.jpg",
+    "category": "nature"
+  },
+  "a10": {
+    "title": "New York Stairs",
+    "price": 1199,
+    "image": "/images/product-pictures/newyork-stairs.jpg",
+    "category": "nature"
+  },
+  "a11":{
+    "title": "Night Street",
+    "price": 499,
+    "image": "/images/product-pictures/night-street.jpg",
+    "category": "nature"
+  },
+  "a12": {
+    "title": "Traffic Street",
+    "price": 1599,
+    "image": "/images/product-pictures/traffic-street.jpg",
+    "category": "nature"
+  }
 }
