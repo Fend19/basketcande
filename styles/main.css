@@ -94,6 +94,7 @@ nav #basket {
       align-self: center;
   text-align: center;
   background-image: url(/images/brownbrush.png);
+  padding-bottom: 2em;
   background-repeat: no-repeat;
   background-position: center;
   height: 600px;
@@ -113,6 +114,7 @@ nav #basket {
 .categories {
   margin: auto;
   text-align: center;
+  padding-bottom: 3em;
 }
 
 .categories h2 {
@@ -153,7 +155,6 @@ nav #basket {
   grid-gap: 3em;
   padding: 4em;
   background-color: #8C766D;
-  margin-top: 2em;
 }
 
 .posterArticle section {
@@ -274,8 +275,6 @@ footer section a {
 .confirmPageBody {
   background-size: cover;
   background: #8c766d;
-  background: -webkit-gradient(linear, left top, left bottom, to(rgba(38, 38, 38, 0.79))), rgba(140, 118, 109, 0.406) 24%, url(/images/nordwood-themes-KcsKWw77Ovw-unsplash.jpg);
-  background: linear-gradient(to bottom, rgba(38, 38, 38, 0.79) 100%), rgba(140, 118, 109, 0.406) 24%, url(/images/nordwood-themes-KcsKWw77Ovw-unsplash.jpg);
   background-repeat: no-repeat;
   background-position: center;
   min-height: 100vh;

@@ -13,10 +13,10 @@ fetch('main.json')
 function productContent(products) {
     let productArray = products.products;
     console.log(productArray);
-    
+
     productArray.forEach(element => {
         console.log(element.category);
-        
+
 
 
         // Creating container for each product
@@ -79,21 +79,42 @@ function productContent(products) {
         productButtonBuy.addEventListener('click', function () {
             amountSelected += parseInt(productAmount.value);
             console.log(amountSelected);
-            
+
         });
 
-            // Added category nature/animal as class to productSections
+        // Eventlisteners for confirmpage
+
+        // Append elements to this declaration
+        // let confirmpage = document.querySelector('.mainConfirmPage')
+        // console.log(confirmpage)
+        // let confirmpageSections = document.createElement('section')
+
+        // let hejel = document.createElement('h3').innerHTML = "Hej"
+        // confirmpageSections.appendChild(hejel)
+
+        // confirmpage.appendChild(confirmpageSections)
+
+        // // 1. When you click on buy button you append a product to confirmpage
+        // productButtonBuy.addEventListener('click', function () {
+        //     confirmpageSections.appendChild(productSection)
+
+        //     // 2. Add product to localStorage
+        //     localStorage.setItem('product', productSection)
+
+        // })
+
+        // Added category nature/animal as class to productSections
         productSection.classList.add(element.category);
-        
-        
+
+
         productCounter++; // Variable for the index of object in productArray
     });
 };
 
 
-            // Creating filtering for all/nature/animals-button
-    //Function that hides/shows classes 'nature' and 'animals'
-function sortingHat(){
+// Creating filtering for all/nature/animals-button
+//Function that hides/shows classes 'nature' and 'animals'
+function sortingHat() {
     let category = this.innerText.toString().toLowerCase();
     let showEverything = document.querySelectorAll('.nature, .animals');
     showEverything.forEach(element => {
@@ -101,7 +122,7 @@ function sortingHat(){
     });
     let hideNature = document.querySelectorAll('.nature');
     let hideAnimals = document.querySelectorAll('.animals');
-    
+
     if (category === 'nature') {
         hideAnimals.forEach(element => {
             element.hidden = true;
@@ -111,7 +132,7 @@ function sortingHat(){
         });
     } else if (category === 'animals') {
         hideNature.forEach(element => {
-        element.hidden = true;
+            element.hidden = true;
         });
         hideAnimals.forEach(element => {
             element.hidden = false;
@@ -119,14 +140,14 @@ function sortingHat(){
     };
 };
 
-            // Eventlistener for buttons that sorts the products
-let showAll = document.querySelector('.showAll');
-showAll.addEventListener('click', sortingHat);
+// Eventlistener for buttons that sorts the products
+if (document.querySelector('.showAll')) {
+    let showAll = document.querySelector('.showAll');
+    showAll.addEventListener('click', sortingHat);
+}
 
 let showNature = document.querySelector('.showNature');
 showNature.addEventListener('click', sortingHat);
 
 let showAnimals = document.querySelector('.showAnimals');
 showAnimals.addEventListener('click', sortingHat);
-
-

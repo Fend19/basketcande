@@ -1,6 +1,7 @@
 .categories {
   margin: auto;
   text-align: center;
+  padding-bottom: 3em;
 
   h2 {
     font-family: flood-std, sans-serif;
@@ -36,7 +37,6 @@
   grid-gap: 3em;
   padding: 4em;
   background-color: #8C766D;
-  margin-top: 2em;
 
   section {
     display: grid;
