@@ -7,7 +7,7 @@ let productCounter = 0; // Needed to find index of products in forEach on row 20
 fetch('main.json')
     .then(resp => resp.json())
     .then(json => productContent(json))
-    .catch(err => console.log('err'));
+    .catch(err => console.log('error'));
 
 
 function productContent(products) {
@@ -15,13 +15,13 @@ function productContent(products) {
     console.log(productArray);
     
     productArray.forEach(element => {
-        console.log(element.category);
         
 
 
         // Creating container for each product
         let productSection = document.createElement('section');
         productSection.className = 'product-' + productCounter;
+        productSection.style.display = 'grid';
         document.querySelector('.posterArticle').appendChild(productSection);
 
         // *****Creating elements and placing them in productcontainer(aka productSection)*****
@@ -44,7 +44,6 @@ function productContent(products) {
         productHeadline.innerText = element.title;
         productTextInfo.appendChild(productHeadline)
         document.querySelector("[class=product-" + productCounter + "]").appendChild(productTextInfo);
-        console.log(element.title);
 
         // Creating product "information"
         let productLorem = document.createElement('p');
@@ -57,7 +56,6 @@ function productContent(products) {
         productPrice.innerText = 'Price: ' + element.price + ':-';
         productTextInfo.appendChild(productPrice)
         document.querySelector("[class=product-" + productCounter + "]").appendChild(productTextInfo);
-        console.log(element.price);
 
         // Creating input for amount of specified product that should be added to basket
         let productAmount = document.createElement('input');
@@ -78,8 +76,6 @@ function productContent(products) {
         let amountSelected = 0;
         productButtonBuy.addEventListener('click', function () {
             amountSelected += parseInt(productAmount.value);
-            console.log(amountSelected);
-            
         });
 
             // Added category nature/animal as class to productSections
@@ -97,24 +93,21 @@ function sortingHat(){
     let category = this.innerText.toString().toLowerCase();
     let showEverything = document.querySelectorAll('.nature, .animals');
     showEverything.forEach(element => {
-        element.hidden = false;
+        element.style.display = 'grid';
     });
-    let hideNature = document.querySelectorAll('.nature');
-    let hideAnimals = document.querySelectorAll('.animals');
+    let hideNature = document.querySelectorAll('.posterArticle > .nature');
+    let hideAnimals = document.querySelectorAll('.posterArticle > .animals');
     
     if (category === 'nature') {
         hideAnimals.forEach(element => {
-            element.hidden = true;
+            element.style.display = 'none';
+            productsArticle.style.gridTemplate = '1fr 1fr 1fr / 1fr 1fr 1fr';
         });
-        hideNature.forEach(element => {
-            element.hidden = false;
-        });
+
     } else if (category === 'animals') {
         hideNature.forEach(element => {
-        element.hidden = true;
-        });
-        hideAnimals.forEach(element => {
-            element.hidden = false;
+            element.style.display = 'none';
+            productsArticle.style.gridTemplate = '1fr 1fr / 1fr 1fr 1fr';
         });
     };
 };

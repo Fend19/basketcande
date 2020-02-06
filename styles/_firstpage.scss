@@ -37,13 +37,12 @@
   padding: 4em;
   background-color: #8C766D;
   margin-top: 2em;
-
+  
   section {
-    display: grid;
     grid-template-rows: 1fr auto;
     max-height: 500px;
     height: 100%;
-
+    
     .productTextInfo {
       padding-bottom: 1em;
       display: grid;
