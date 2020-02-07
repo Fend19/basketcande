@@ -14,10 +14,6 @@
     // Creating container for each product
 
     for (let i = 1; i < 13; i++){
-      console.log(productArray['a'+i].image);
-      // let thisObject = productArray['a'+i].image;
-      // console.log(thisObject);
-      
       let productSection = document.createElement("section");
       productSection.className = 'a'+i;
       productSection.classList.add(productArray['a'+i].category);
