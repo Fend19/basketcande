@@ -1,75 +1,87 @@
 {
   "a1": {
-      "title": "Green Landscape",
-      "price": 199,
-      "image": "/images/product-pictures/green-landscape.jpg",
-      "category": "nature"
-    },
+    "title": "Green Landscape",
+    "price": 199,
+    "image": "/images/product-pictures/green-landscape.jpg",
+    "category": "nature",
+    "description": "This is a poster of a Green Landscape"
+  },
 
   "a2": {
-      "title": "Angry Eagle",
-      "price": 399,
-      "image": "/images/product-pictures/angry-eagle.jpg",
-      "category": "animals"
-    },
+    "title": "Angry Eagle",
+    "price": 399,
+    "image": "/images/product-pictures/angry-eagle.jpg",
+    "category": "animals",
+    "description": "This is a poster of a Angry Eagle"
+  },
   "a3": {
-      "title": "Boat Landscape",
-      "price": 749,
-      "image": "/images/product-pictures/boat-landscape.jpg",
-      "category": "nature"
+    "title": "Boat Landscape",
+    "price": 749,
+    "image": "/images/product-pictures/boat-landscape.jpg",
+    "category": "nature",
+    "description": "This is a poster of a Boat Landscape"
   },
   "a4": {
     "title": "Boat Sunset",
     "price": 149,
     "image": "/images/product-pictures/boat-sunset.jpg",
-    "category": "nature"
+    "category": "nature",
+    "description": "This is a poster of a Boat Sunset"
   },
   "a5": {
     "title": "City View",
     "price": 399,
     "image": "/images/product-pictures/city-view.jpg",
-    "category": "nature"
+    "category": "nature",
+    "description": "This is a poster of a City View"
   },
   "a6": {
     "title": "Cute Elephant",
     "price": 899,
     "image": "/images/product-pictures/cute-elephant.jpg",
-    "category": "animals"
+    "category": "animals",
+    "description": "This is a poster of a Cute Elephant"
   },
   "a7": {
     "title": "Flying Eagle",
     "price": 1099,
     "image": "/images/product-pictures/flying-eagle.jpg",
-    "category": "animals"
+    "category": "animals",
+    "description": "This is a poster of a Flying Eagle"
   },
   "a8": {
     "title": "Happy Dog",
     "price": 1499,
     "image": "/images/product-pictures/happy-dog.jpg",
-    "category": "animals"
+    "category": "animals",
+    "description": "This is a poster of a Happy Dog"
   },
   "a9": {
     "title": "Ireland Landscape",
     "price": 1099,
     "image": "/images/product-pictures/ireland-landscape.jpg",
-    "category": "nature"
+    "category": "nature",
+    "description": "This is a poster of a Ireland Landscape"
   },
   "a10": {
     "title": "New York Stairs",
     "price": 1199,
     "image": "/images/product-pictures/newyork-stairs.jpg",
-    "category": "nature"
+    "category": "nature",
+    "description": "This is a poster of a New York Stairs"
   },
-  "a11":{
+  "a11": {
     "title": "Night Street",
     "price": 499,
     "image": "/images/product-pictures/night-street.jpg",
-    "category": "nature"
+    "category": "nature",
+    "description": "This is a poster of a Night Street"
   },
   "a12": {
     "title": "Traffic Street",
     "price": 1599,
     "image": "/images/product-pictures/traffic-street.jpg",
-    "category": "nature"
+    "category": "nature",
+    "description": "This is a poster of a Traffic Street"
   }
 }
