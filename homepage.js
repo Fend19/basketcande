@@ -35,10 +35,8 @@
   }
 
 
-  
-  
-  // // Creating filtering for all/nature/animals-button
-  // //Function that hides/shows classes 'nature' and 'animals'
+  // Creating filtering for all/nature/animals-button
+  //Function that hides/shows classes 'nature' and 'animals'
   function sortingHat() {
     let category = this.innerText.toString().toLowerCase();
     let showEverything = document.querySelectorAll(".nature, .animals");
