@@ -45,6 +45,9 @@ nav {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  height: 80px;
+  z-index: 11;
+  overflow: hidden;
 }
 
 nav .active {
@@ -155,11 +158,10 @@ nav #basket {
   grid-gap: 3em;
   padding: 4em;
   background-color: #8C766D;
+  margin-top: 2em;
 }
 
 .posterArticle section {
-  display: -ms-grid;
-  display: grid;
   -ms-grid-rows: 1fr auto;
       grid-template-rows: 1fr auto;
   max-height: 500px;
@@ -272,7 +274,7 @@ footer section a {
   color: #BF9C8F;
 }
 
-.confirmPageBody {
+.confirmPage {
   background-size: cover;
   background: #8c766d;
   background-repeat: no-repeat;
@@ -287,5 +289,16 @@ footer section a {
   font-family: flood-std, sans-serif;
   font-size: 60px;
   color: #262626;
+}
+
+.popUpContent {
+  background-color: #262626;
+  margin-left: auto;
+  padding: 3em;
+  width: 30vw;
+  height: 400px;
+  -webkit-box-shadow: 2px 5px 4px #000;
+          box-shadow: 2px 5px 4px #000;
+  color: #F2EAE4;
 }
 /*# sourceMappingURL=main.css.map */
