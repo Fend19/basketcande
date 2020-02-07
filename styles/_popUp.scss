@@ -1,0 +1,80 @@
+.popUpContent {
+  background-color: #262626;
+  margin-left: auto;
+  padding: 3em;
+  width: 30vw;
+  height: 400px;
+  box-shadow: 2px 5px 4px #000;
+  color: #F2EAE4;
+
+  button {
+    height: 30px;
+    width: 150px;
+    border: 1px solid #262626;
+    background-color: #BF9C8F;
+    color: #262626;
+    font-family: upgrade, sans-serif;
+    font-weight: 400;
+    margin: 0 0.5em;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    transition: ease-in 0.5s;
+    transform: scale(1.1);
+  }
+}
+
+.formContent {
+  background-color: #262626;
+  margin: 2em auto;
+  padding: 3em;
+  width: 70vw;
+  height: 80vh;
+  box-shadow: 2px 5px 4px #000;
+  color: #F2EAE4;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    font-family: flood-std, sans-serif;
+    font-size: 40px;
+    padding: 1em;
+  }
+
+  input {
+    max-width: 400px;
+    width: 100%;
+    margin: 1em;
+  }
+
+  #expirationDate,
+  #cvc {
+    max-width: 200px;
+    margin: 0 0 1em 0;
+  }
+
+  button {
+    margin: auto;
+    height: 30px;
+    width: 150px;
+    border: 1px solid #262626;
+    background-color: #BF9C8F;
+    color: #262626;
+    font-family: upgrade, sans-serif;
+    font-weight: 400;
+    margin: 0 0.5em;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    transition: ease-in 0.5s;
+    transform: scale(1.1);
+  }
+}
