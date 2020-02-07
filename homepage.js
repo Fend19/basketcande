@@ -30,17 +30,22 @@
       </section>`;
       document.querySelector(".posterArticle").appendChild(productSection);
       
-      console.log(JSON.stringify(productArray['a'+i]));
-      
       // Adding eventlistener to the buybutton to get value of quantity selected
       let inputValue = document.querySelector(`.${'a'+i}-input`);
       let buyButton = document.querySelector(`.addToCart-${'a'+i}`);
       let amountSelected = 0;
       buyButton.addEventListener('click', function(){
+
+        if(JSON.parse(localStorage.getItem(`a${i}`))){
+          let currentValue = JSON.parse(localStorage.getItem(`a${i}`)).value;
+          amountSelected = currentValue;
+        };
         amountSelected += parseInt(inputValue.value);
-        // Set localStorage-Key to objects content and the value as how many of the product user has selected
-        localStorage.setItem(JSON.stringify(productArray['a'+i]), amountSelected);
-        console.log(amountSelected);
+        productArray['a'+i].value = amountSelected;
+        let newProductArray = `${JSON.stringify(productArray['a'+i])}`;
+
+        // Set localStorage-Key to objects content and the value as totalamount of products the user has selected
+        localStorage.setItem(`a${i}`, newProductArray);
       })
     }
   }
@@ -76,5 +81,23 @@ function sortingHat() {
       element.style.display = "none";
       productsArticle.style.gridTemplate = "1fr 1fr / 1fr 1fr 1fr";
     });
+  }
+}
+
+let storageTest = document.createElement('div');
+storageTest.className = 'localTest';
+document.querySelector('main').appendChild(storageTest);
+
+
+      // Code below gets the information in local storage 
+
+for (let i = 1; i < 13; i++) {
+  if(JSON.parse(window.localStorage.getItem('a'+i))){
+    let thisLocalStorage = window.localStorage.getItem('a'+i);
+    let thisLocalStorageParsed = JSON.parse(thisLocalStorage);
+    console.log(thisLocalStorageParsed);
+  }else{
+    console.log('hittar inte någon me de namnet');
+    
   }
 }
