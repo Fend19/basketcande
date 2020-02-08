@@ -3,9 +3,23 @@
   margin-left: auto;
   padding: 3em;
   width: 30vw;
-  height: 400px;
   box-shadow: 2px 5px 4px #000;
   color: #F2EAE4;
+  display: flex;
+  flex-direction: column;
+
+  .productBasket {
+    display: flex;
+    height: 150px;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #BF9C8F;
+    margin-bottom: 1em;
+
+    .basketImg {
+      margin-right: 1em;
+    }
+  }
+
 
   button {
     height: 30px;

@@ -296,10 +296,30 @@ footer section a {
   margin-left: auto;
   padding: 3em;
   width: 30vw;
-  height: 400px;
   -webkit-box-shadow: 2px 5px 4px #000;
           box-shadow: 2px 5px 4px #000;
   color: #F2EAE4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.popUpContent .productBasket {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 150px;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #BF9C8F;
+  margin-bottom: 1em;
+}
+
+.popUpContent .productBasket .basketImg {
+  margin-right: 1em;
 }
 
 .popUpContent button {

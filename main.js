@@ -1,5 +1,25 @@
+// ******* LocalStorage checkout *******
+// Code below gets the information in local storage 
+function getLocalStorage() {
+  for (let i = 1; i < 13; i++) {
+    if (JSON.parse(window.localStorage.getItem('a' + i))) {
+      let thisLocalStorage = window.localStorage.getItem('a' + i);
+      let thisLocalStorageParsed = JSON.parse(thisLocalStorage);
+      //  console.log(thisLocalStorageParsed);
+      // Show popUp and store localStorage items
+      let site = document.querySelector('.homePage');
+      popUp(site, thisLocalStorageParsed);
+    } else {
+      //  console.log('hittar inte någon me de namnet');
+
+
+    }
+  }
+}
+
+
 // ******* Show PopUp *******
-function popUp(site) {
+function popUp(site, thisLocalStorageParsed) {
   let popUpBasket = document.createElement('div');
   popUpBasket.className = "popUpBasket"
   popUpBasket.style.display = 'none';
@@ -17,7 +37,23 @@ function popUp(site) {
   let popUpContent = document.createElement('div');
   popUpContent.className = "popUpContent"
 
-  popUpContent.innerHTML = `<p> Test </p><br><button class="buyBtn">Gå till kassa</button>`;
+
+  console.log(thisLocalStorageParsed);
+
+  popUpContent.innerHTML += `<h1>Varukorg</h1>`
+  Object.entries(thisLocalStorageParsed).forEach(([key, val]) => {
+    console.log(val);
+    // console.log(val[title])
+
+    popUpContent.innerHTML += `<section class="productBasket"<div class="basketImg"><img class='imgWrapper' src='${val}'></div><br>
+    <div><h2>${val}</h2><br>
+    <input type="number" value="${val}"><br>
+    <h2>${val}</h2>
+    </div></section>`
+  });
+
+  popUpContent.innerHTML += `<br><button class="buyBtn">Gå till kassa</button>`
+
 
   popUpBasket.appendChild(popUpContent)
 
@@ -47,6 +83,7 @@ function popUp(site) {
   let buyBtn = document.querySelector('.buyBtn')
 
   buyBtn.addEventListener('click', function () {
+    popUpBasket.style.display = 'none';
     form(site, buyBtn)
   })
 
@@ -69,12 +106,22 @@ function form(site, button) {
   let formContent = document.createElement('form');
   formContent.className = "formContent"
 
-  formContent.innerHTML = `<h1>Snart får din vägg ett nytt utseende!</h1> <br>
-  <div><input type="text" placeholder="Förnamn"><input type="text" placeholder="Efternamn"><br>
-  <input type="email" placeholder="Email"><input type="text" placeholder="Mobilnr"></div><br>
-  <h2>Total summa: ***SÄTT IN TOTALSUMMA***</h2> <div><input type="text" placeholder="Kortnummer"></div><br>
-  <div><input id="expirationDate" type="text" placeholder="Utgångsdatum MM/ÅÅ"><input id="cvc" type="text" placeholder="CVC"></div>
-  <div><button class="confirm">Betala nu</button>`;
+  formContent.innerHTML = ` < h1 > Snart får din vägg ett nytt utseende! < /h1> <br> <
+    div > < input type = "text"
+  placeholder = "Förnamn" > < input type = "text"
+  placeholder = "Efternamn" > < br >
+    <
+    input type = "email"
+  placeholder = "Email" > < input type = "text"
+  placeholder = "Mobilnr" > < /div><br> <
+    h2 > Total summa: ** * SÄTT IN TOTALSUMMA ** * < /h2> <div><input type="text" placeholder="Kortnummer"></div > < br >
+    <
+    div > < input id = "expirationDate"
+  type = "text"
+  placeholder = "Utgångsdatum MM/ÅÅ" > < input id = "cvc"
+  type = "text"
+  placeholder = "CVC" > < /div> <
+    div > < button class = "confirm" > Betala nu < /button>`;
 
   formContainer.appendChild(formContent)
 
