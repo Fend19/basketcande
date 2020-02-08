@@ -93,4 +93,5 @@
 
 
  // Code below gets the information in local storage 
- getLocalStorage()
+ let site = document.querySelector('.homePage');
+ getLocalStorage(site)

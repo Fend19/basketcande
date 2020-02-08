@@ -1,13 +1,12 @@
 // ******* LocalStorage checkout *******
 // Code below gets the information in local storage 
-function getLocalStorage() {
+function getLocalStorage(site) {
   for (let i = 1; i < 13; i++) {
     if (JSON.parse(window.localStorage.getItem('a' + i))) {
       let thisLocalStorage = window.localStorage.getItem('a' + i);
       let thisLocalStorageParsed = JSON.parse(thisLocalStorage);
       //  console.log(thisLocalStorageParsed);
       // Show popUp and store localStorage items
-      let site = document.querySelector('.homePage');
       popUp(site, thisLocalStorageParsed);
     } else {
       //  console.log('hittar inte någon me de namnet');
@@ -37,20 +36,15 @@ function popUp(site, thisLocalStorageParsed) {
   let popUpContent = document.createElement('div');
   popUpContent.className = "popUpContent"
 
-
-  console.log(thisLocalStorageParsed);
-
   popUpContent.innerHTML += `<h1>Varukorg</h1>`
-  Object.entries(thisLocalStorageParsed).forEach(([key, val]) => {
-    console.log(val);
-    // console.log(val[title])
 
-    popUpContent.innerHTML += `<section class="productBasket"<div class="basketImg"><img class='imgWrapper' src='${val}'></div><br>
-    <div><h2>${val}</h2><br>
-    <input type="number" value="${val}"><br>
-    <h2>${val}</h2>
-    </div></section>`
-  });
+  for (let i = 0; i < window.localStorage.length; i++) {
+    popUpContent.innerHTML += `<section class="productBasket"<div class="basketImg"><img class='imgWrapper' src='${thisLocalStorageParsed.image}'></div><br>
+  <div><h2>${thisLocalStorageParsed.title}</h2><br>
+  <input type="number" value="${thisLocalStorageParsed.value}"><br>
+  <h2>${thisLocalStorageParsed.price}:-</h2>
+  </div></section>`
+  }
 
   popUpContent.innerHTML += `<br><button class="buyBtn">Gå till kassa</button>`
 

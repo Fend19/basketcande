@@ -7,10 +7,11 @@
   color: #F2EAE4;
   display: flex;
   flex-direction: column;
+  z-index: 12;
 
   .productBasket {
     display: flex;
-    height: 150px;
+    height: 100px;
     padding-bottom: 1em;
     border-bottom: 1px solid #BF9C8F;
     margin-bottom: 1em;
