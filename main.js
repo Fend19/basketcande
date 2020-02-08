@@ -39,7 +39,7 @@ function popUp(site, thisLocalStorageParsed) {
   popUpContent.innerHTML += `<h1>Varukorg</h1>`
 
   for (let i = 0; i < window.localStorage.length; i++) {
-    popUpContent.innerHTML += `<section class="productBasket"<div class="basketImg"><img class='imgWrapper' src='${thisLocalStorageParsed.image}'></div><br>
+    popUpContent.innerHTML += `<section class="productBasket"><div class="basketImg"><img class='imgWrapper' src='${thisLocalStorageParsed.image}'></div><br>
   <div><h2>${thisLocalStorageParsed.title}</h2><br>
   <input type="number" value="${thisLocalStorageParsed.value}"><br>
   <h2>${thisLocalStorageParsed.price}:-</h2>

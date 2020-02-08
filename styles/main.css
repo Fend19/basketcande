@@ -319,8 +319,16 @@ footer section a {
   margin-bottom: 1em;
 }
 
+.popUpContent .productBasket h2 {
+  font-size: 20px;
+}
+
+.popUpContent .productBasket h2 {
+  font-size: 16px;
+}
+
 .popUpContent .productBasket .basketImg {
-  margin-right: 1em;
+  margin-right: 2em;
 }
 
 .popUpContent button {
