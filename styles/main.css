@@ -294,7 +294,7 @@ footer section a {
 .popUpContent {
   background-color: #262626;
   margin-left: auto;
-  padding: 3em;
+  padding: 2em;
   width: 30vw;
   -webkit-box-shadow: 2px 5px 4px #000;
           box-shadow: 2px 5px 4px #000;
@@ -307,28 +307,52 @@ footer section a {
       -ms-flex-direction: column;
           flex-direction: column;
   z-index: 12;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.popUpContent .productBasket {
+.popUpContent h1 {
+  font-family: flood-std, sans-serif;
+  padding-bottom: 1em;
+}
+
+.popUpContent section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100px;
-  padding-bottom: 1em;
-  border-bottom: 1px solid #BF9C8F;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 1em;
 }
 
-.popUpContent .productBasket h2 {
-  font-size: 20px;
-}
-
-.popUpContent .productBasket h2 {
+.popUpContent section h2 {
   font-size: 16px;
 }
 
-.popUpContent .productBasket .basketImg {
+.popUpContent section .basketImg {
   margin-right: 2em;
+  max-width: 200px;
+}
+
+.popUpContent section .basketImg img {
+  padding: 1em;
+  background: white;
+  border: 1px black solid;
+}
+
+.popUpContent section input {
+  width: 50px;
+  background-color: #262626;
+  color: #BF9C8F;
+  height: 30px;
+  padding-left: 0.5em;
+  border: #BF9C8F solid 1px;
+  border-radius: 5px;
 }
 
 .popUpContent button {

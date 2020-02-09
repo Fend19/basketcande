@@ -28,6 +28,9 @@
       <input type='number' class='${'a'+i}-input' min='1' value='1'>
       <button class='buyButtonStyler addToCart-${'a'+i}'>Add to Cart</button>
       </section>`;
+
+     //  console.log(productArray['a' + i].image)
+
      document.querySelector(".posterArticle").appendChild(productSection);
 
      // Adding eventlistener to the buybutton to get value of quantity selected
@@ -46,9 +49,11 @@
 
        // Set localStorage-Key to objects content and the value as totalamount of products the user has selected
        localStorage.setItem(`a${i}`, newProductArray);
+       //  console.log(newProductArray);
      })
    }
  }
+
 
 
  // Eventlistener for buttons that sorts the products within if's so they dont cause errors in the shoppingcart-page
@@ -87,10 +92,6 @@
  let storageTest = document.createElement('div');
  storageTest.className = 'localTest';
  document.querySelector('main').appendChild(storageTest);
-
-
-
-
 
  // Code below gets the information in local storage 
  let site = document.querySelector('.homePage');
