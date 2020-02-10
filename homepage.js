@@ -89,10 +89,6 @@
    }
  }
 
- let storageTest = document.createElement('div');
- storageTest.className = 'localTest';
- document.querySelector('main').appendChild(storageTest);
-
  // Code below gets the information in local storage 
- let site = document.querySelector('.homePage');
- getLocalStorage(site)
+//  let site = document.querySelector('.homePage');
+//  getLocalStorage(site)
