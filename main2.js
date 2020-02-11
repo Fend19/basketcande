@@ -17,6 +17,7 @@ basketBtn.addEventListener('click', getLocalStorage);
 
 function getLocalStorage() {
   if (document.querySelector('.popUpBasket')) {
+    document.getElementById('basket').src = "/images/shoppingcart.svg"
     console.log('popUpBasket hittas och tas bort');
     let removePopUpBasket = document.querySelector('.popUpBasket');
     removePopUpBasket.parentNode.removeChild(removePopUpBasket);
@@ -86,13 +87,14 @@ function createPopUpBasket() {
 
 function createPopUpContent() {
   // Create section for basket products
+  document.getElementById('basket').src = "/images/cross.svg"
   let popUpContent = document.createElement('div');
   popUpContent.className = "popUpContent";
-  popUpContent.innerHTML = `<h1>Varukorg</h1>`;
+  popUpContent.innerHTML = `<h1>Cart</h1>`;
   document.querySelector('.popUpBasket').appendChild(popUpContent);
   createProductInBasket();
 
-  popUpContent.innerHTML += `<br><h3 id='totalSum'>Totalkostnad: ${totalSum} :-</h3><br><button class="buyBtn">Gå till kassa</button>`;
+  popUpContent.innerHTML += `<br><h3 id='totalSum'>Total cost: ${totalSum} :-</h3><br><button class="buyBtn">Go to checkout</button>`;
 
 }
 
@@ -107,11 +109,11 @@ function createProductInBasket() {
       let itemInBasket = document.createElement('section');
       itemInBasket.className = 'productInBasket productInBasket-' + classNameForBasketProduct;
       itemInBasket.innerHTML = `<div class="basketImg"><img class='imgWrapper' src='${itemInLocalStorage.image}'></div><br>
-      <div><h2>${itemInLocalStorage.title}</h2>
+      <div class="textProduct"><h2>${itemInLocalStorage.title}</h2>
       <br>
-      <input class='${classNameForBasketProduct}-input-changer' type="number" min='0' value="${itemInLocalStorage.value}">
-      <br><button class='buyButtonStyler correctAmount-a${i}'>Ändra antal</button>
-      <button id='removeItem-a${i}'>Ta bort</button>
+      <div class="change"><input class='${classNameForBasketProduct}-input-changer' type="number" min='0' value="${itemInLocalStorage.value}">
+      <button class='buyButtonStyler correctAmount-a${i}'>Change amount</button></div>
+      <button id='removeItem-a${i}'>Delete</button>
       <br>
       <h2 class='h2-${classNameForBasketProduct}'>${itemInLocalStorage.price * itemInLocalStorage.value}:-</h2>
       </div>`;
