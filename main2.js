@@ -71,19 +71,17 @@ function getLocalStorage() {
 
 
       formContainer.className = "popUpBasket"
-      formContainer.style.position = 'absolute';
+      formContainer.style.position = 'fixed';
       formContainer.style.zIndex = '11';
       formContainer.style.top = '80px';
       formContainer.style.width = '100%';
       formContainer.style.height = '100%';
       formContainer.style.overflow = 'auto';
-      formContainer.style.backgroundColor = '#000';
-      formContainer.style.backgroundColor = 'rgb(0,0,0,0.3)';
-      
+
       let finalCost = 0;
       for (let i = 1; i < 13; i++) {
         if (window.localStorage.getItem('a' + i)) {
-          let finalCount = JSON.parse(localStorage.getItem('a'+i));
+          let finalCount = JSON.parse(localStorage.getItem('a' + i));
           finalCost += finalCount.value * finalCount.price;
         }
       }
