@@ -38,12 +38,14 @@
      let buyButton = document.querySelector(`.addToCart-${'a'+i}`);
      let amountSelected = 0;
      buyButton.addEventListener('click', function () {
-
        if (JSON.parse(localStorage.getItem(`a${i}`))) {
          let currentValue = JSON.parse(localStorage.getItem(`a${i}`)).value;
          amountSelected = currentValue;
-       };
-       amountSelected += parseInt(inputValue.value);
+        } else {
+          amountSelected = 0;
+        };
+
+        amountSelected += parseInt(inputValue.value);
        productArray['a' + i].value = amountSelected;
        let newProductArray = `${JSON.stringify(productArray['a'+i])}`;
 

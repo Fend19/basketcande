@@ -13,6 +13,7 @@ let basketBtn = document.getElementById('basket');
 basketBtn.addEventListener('click', getLocalStorage);
 
 
+
 function getLocalStorage() {
   if (document.querySelector('.popUpBasket')) {
     console.log('popUpBasket hittas och tas bort');
@@ -21,6 +22,40 @@ function getLocalStorage() {
     totalSum = 0;
   } else {
     createBasket();
+  }
+  for (let i = 1; i < 13; i++) {
+    if (document.querySelector(`#removeItem-a${i}`)) {
+      
+      let removeItem = document.getElementById(`removeItem-a${i}`);
+      console.log(removeItem);
+      removeItem.addEventListener('click', function () {
+        let removeThis = document.querySelector('.productInBasket-a'+i);
+        removeThis.parentNode.removeChild(removeThis);
+        localStorage.removeItem('a' + i);
+        resetPopUp();
+      });
+
+      let newInputButton = document.querySelector(`.correctAmount-a${i}`);
+      console.log(newInputButton);
+      newInputButton.addEventListener('click', function () {
+        let newInputValue = document.querySelector(`.a${i}-input-changer`).value;
+        console.log(newInputValue);
+        
+        if (newInputValue == 0) {
+          let removeThis = document.querySelector('.productInBasket-a'+i);
+          removeThis.parentNode.removeChild(removeThis);
+          localStorage.removeItem('a' + i);
+        }else{
+          let valueChangeLocalStorage = JSON.parse(window.localStorage.getItem('a' + i));
+          valueChangeLocalStorage.value = parseInt(newInputValue);
+          console.log(valueChangeLocalStorage);
+          window.localStorage.setItem('a' + i, JSON.stringify(valueChangeLocalStorage));
+          console.log(JSON.parse(window.localStorage.getItem('a' + i)));
+        }
+
+        resetPopUp();
+      });
+    }
   }
 }
 
@@ -55,7 +90,7 @@ function createPopUpContent() {
     document.querySelector('.popUpBasket').appendChild(popUpContent);
     createProductInBasket();
 
-    popUpContent.innerHTML += `<br><h3>Totalkostnad: ${totalSum} :-</h3><br><button class="buyBtn">Gå till kassa</button>`;
+    popUpContent.innerHTML += `<br><h3 id='totalSum'>Totalkostnad: ${totalSum} :-</h3><br><button class="buyBtn">Gå till kassa</button>`;
 
 }
 
@@ -70,8 +105,12 @@ function createProductInBasket() {
       let itemInBasket = document.createElement('section');
       itemInBasket.className = 'productInBasket productInBasket-' + classNameForBasketProduct;
       itemInBasket.innerHTML = `<div class="basketImg"><img class='imgWrapper' src='${itemInLocalStorage.image}'></div><br>
-      <div><h2>${itemInLocalStorage.title}</h2><br>
-      <input class='${classNameForBasketProduct}' type="number" min='0' value="${itemInLocalStorage.value}"><br>
+      <div><h2>${itemInLocalStorage.title}</h2>
+      <br>
+      <input class='${classNameForBasketProduct}-input-changer' type="number" min='0' value="${itemInLocalStorage.value}">
+      <br><button class='buyButtonStyler correctAmount-a${i}'>Ändra antal</button>
+      <button id='removeItem-a${i}'>Ta bort</button>
+      <br>
       <h2 class='h2-${classNameForBasketProduct}'>${itemInLocalStorage.price * itemInLocalStorage.value}:-</h2>
       </div>`;
       document.querySelector('.popUpContent').appendChild(itemInBasket);
@@ -80,58 +119,17 @@ function createProductInBasket() {
       console.log(itemInLocalStorage.price);
       console.log(itemInLocalStorage.value);
       console.log(`.${classNameForBasketProduct}`);
-      
-      // Creating eventListner to amountInput next to each item in cart.
-                                                                  // let inputValue = document.querySelector(`.${classNameForBasketProduct}`);
-                                                                  // inputValue.addEventListener('change', function(event){
-                                                                  //   console.log(event);
-                                                                    
-                                                                    
-                                                                  //   console.log(document.querySelector(`.${classNameForBasketProduct}`).value);
-                                                                  //   itemInLocalStorage.value = this.value;
-                                                                  //   document.querySelector('.h2-'+this.className).innerHTML = (itemInLocalStorage.price * this.value);
-                                                                  //   console.log('nu ändras nått??');
-                                                                    
-                                                                  // });
-      
     } else {
       console.log('hittar inte någon me de namnet');
     };
   };
 };
 
-// // ******* Show PopUp *******
-// function popUp(thisLocalStorageParsed) {
+function resetPopUp () {
+  totalSum = 0;
+        
+  let removePopUpBasket = document.querySelector('.popUpBasket');
+  removePopUpBasket.parentNode.removeChild(removePopUpBasket);
   
-  
-  
-// }
-// function showPopUp(thisLocalStorageParsed) {
-  
-  //   productStorage(popUpContent, thisLocalStorageParsed, popUpBasket)
-  // }
-  // popUpContent.appendChild(basketSection)
-  // // Function below appends products to popUp (basket)
-// function productStorage(thisLocalStorageParsed) {
-//   // Empty basket for every click
-  
-  
-//   // Loops over localStorage to see what's in it and creates sections for each product
-//   // ***** WHY DOES IT CREATES 2 BASKETS(?((?(?)?)?)?) SO FCKING ANGRY ******
-  
-//       // console.log(localStorage.getItem(localStorage.key(i).title))
-//     }
-//   }
-  
-  
-
-
-
-//   let buyBtn = document.querySelector('.buyBtn');
-//   console.log('clicked buy button')
-
-//   buyBtn.addEventListener('click', function () {
-//     popUpBasket.style.display = 'none';
-//     form(site, buyBtn)
-//   })
-// }
+  getLocalStorage();
+}
