@@ -1,7 +1,7 @@
 // Appenda till confirmpage.html
 let confirmContent = document.querySelector('.confirmContent');
 
-confirmContent.innerHTML += `<h1>Orderbekräftelse</h1><div class="productsCollector"></div>`
+confirmContent.innerHTML += `<h1>Order confirmation</h1><div class="productsCollector"></div>`
 
 // Hämta data från localStorage
 for (let productsArr = 1; productsArr < 13; productsArr++) {
@@ -19,7 +19,7 @@ let productsInfoCollector = document.createElement('div');
 productsInfoCollector.className = 'productsInfoCollector';
 let tableProductInfo = document.createElement('table');
 tableProductInfo.className = 'tableProductInfo';
-tableProductInfo.innerHTML += `<tr><th>Titel</th><th>Antal</th><th>Pris</th></tr>`;
+tableProductInfo.innerHTML += `<tr><th>Title</th><th>Amount</th><th>Price</th></tr>`;
 confirmContent.appendChild(productsInfoCollector);
 
 for (let productsArr = 1; productsArr < 13; productsArr++) {
@@ -48,7 +48,7 @@ for (let productsArr = 1; productsArr < 13; productsArr++) {
     totalPrice += productsObject.value * productsObject.price;
     console.log('product ID: ' + productID + ' productsObject.title: ' + productsObject.title)
 
-    totalCost.innerHTML = `<h2>Totalkostnad: ${totalPrice}:-</h2>`;
+    totalCost.innerHTML = `<h2>Total cost: ${totalPrice}:-</h2>`;
     tableProductInfo.appendChild(totalCost)
   }
 }

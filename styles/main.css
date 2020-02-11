@@ -446,12 +446,52 @@ footer section button:hover {
 .popUpContent section .basketImg {
   margin-right: 2em;
   max-width: 200px;
+  width: 100%;
 }
 
 .popUpContent section .basketImg img {
   padding: 1em;
   background: white;
   border: 1px black solid;
+}
+
+.popUpContent section .textProduct {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.popUpContent section .textProduct h2 {
+  padding-bottom: 1em;
+}
+
+.popUpContent section .textProduct .change {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.popUpContent section .textProduct .change input {
+  width: 50px;
+}
+
+.popUpContent section .textProduct .change button {
+  width: 100px;
+  margin: 0;
+  font-size: 12px;
 }
 
 .popUpContent section input {
@@ -476,13 +516,6 @@ footer section button:hover {
   cursor: pointer;
   font-size: 16px;
   border-radius: 5px;
-}
-
-.popUpContent button:hover {
-  -webkit-transition: ease-in 0.5s;
-  transition: ease-in 0.5s;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
 }
 
 .formContent {
