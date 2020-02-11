@@ -1,3 +1,4 @@
+// Total price in cart
 let totalSum = 0;
 
 window.addEventListener('click', function () {
@@ -28,6 +29,7 @@ function createBasket() {
   createPopUpBasket();
   createPopUpContent();
 }
+
 function createPopUpBasket() {
   // Create a section for basket that gives a shoddow on everything behind it
   let popUpBasket = document.createElement('div');
@@ -41,21 +43,21 @@ function createPopUpBasket() {
   popUpBasket.style.overflow = 'auto';
   popUpBasket.style.backgroundColor = '#000';
   popUpBasket.style.backgroundColor = 'rgb(0,0,0,0.3)';
-  
-      // Append popUp to site
+
+  // Append popUp to site
   document.querySelector('.homePage').appendChild(popUpBasket);
 }
 
 
 function createPopUpContent() {
-    // Create section for basket products
-    let popUpContent = document.createElement('div');
-    popUpContent.className = "popUpContent";
-    popUpContent.innerHTML = `<h1>Varukorg</h1>`;
-    document.querySelector('.popUpBasket').appendChild(popUpContent);
-    createProductInBasket();
+  // Create section for basket products
+  let popUpContent = document.createElement('div');
+  popUpContent.className = "popUpContent";
+  popUpContent.innerHTML = `<h1>Varukorg</h1>`;
+  document.querySelector('.popUpBasket').appendChild(popUpContent);
+  createProductInBasket();
 
-    popUpContent.innerHTML += `<br><h3>Totalkostnad: ${totalSum} :-</h3><br><button class="buyBtn">Gå till kassa</button>`;
+  popUpContent.innerHTML += `<br><h3>Totalkostnad: ${totalSum} :-</h3><br><button class="buyBtn">Gå till kassa</button>`;
 
 }
 
@@ -64,8 +66,8 @@ function createProductInBasket() {
   for (let i = 1; i < 13; i++) {
     if (window.localStorage.getItem('a' + i)) {
       let itemInLocalStorage = JSON.parse(window.localStorage.getItem('a' + i));
-      let classNameForBasketProduct = 'a'+i;
-      
+      let classNameForBasketProduct = 'a' + i;
+
 
       let itemInBasket = document.createElement('section');
       itemInBasket.className = 'productInBasket productInBasket-' + classNameForBasketProduct;
@@ -80,20 +82,20 @@ function createProductInBasket() {
       console.log(itemInLocalStorage.price);
       console.log(itemInLocalStorage.value);
       console.log(`.${classNameForBasketProduct}`);
-      
+
       // Creating eventListner to amountInput next to each item in cart.
-                                                                  // let inputValue = document.querySelector(`.${classNameForBasketProduct}`);
-                                                                  // inputValue.addEventListener('change', function(event){
-                                                                  //   console.log(event);
-                                                                    
-                                                                    
-                                                                  //   console.log(document.querySelector(`.${classNameForBasketProduct}`).value);
-                                                                  //   itemInLocalStorage.value = this.value;
-                                                                  //   document.querySelector('.h2-'+this.className).innerHTML = (itemInLocalStorage.price * this.value);
-                                                                  //   console.log('nu ändras nått??');
-                                                                    
-                                                                  // });
-      
+      // let inputValue = document.querySelector(`.${classNameForBasketProduct}`);
+      // inputValue.addEventListener('change', function(event){
+      //   console.log(event);
+
+
+      //   console.log(document.querySelector(`.${classNameForBasketProduct}`).value);
+      //   itemInLocalStorage.value = this.value;
+      //   document.querySelector('.h2-'+this.className).innerHTML = (itemInLocalStorage.price * this.value);
+      //   console.log('nu ändras nått??');
+
+      // });
+
     } else {
       console.log('hittar inte någon me de namnet');
     };
@@ -102,28 +104,28 @@ function createProductInBasket() {
 
 // // ******* Show PopUp *******
 // function popUp(thisLocalStorageParsed) {
-  
-  
-  
+
+
+
 // }
 // function showPopUp(thisLocalStorageParsed) {
-  
-  //   productStorage(popUpContent, thisLocalStorageParsed, popUpBasket)
-  // }
-  // popUpContent.appendChild(basketSection)
-  // // Function below appends products to popUp (basket)
+
+//   productStorage(popUpContent, thisLocalStorageParsed, popUpBasket)
+// }
+// popUpContent.appendChild(basketSection)
+// // Function below appends products to popUp (basket)
 // function productStorage(thisLocalStorageParsed) {
 //   // Empty basket for every click
-  
-  
+
+
 //   // Loops over localStorage to see what's in it and creates sections for each product
 //   // ***** WHY DOES IT CREATES 2 BASKETS(?((?(?)?)?)?) SO FCKING ANGRY ******
-  
+
 //       // console.log(localStorage.getItem(localStorage.key(i).title))
 //     }
 //   }
-  
-  
+
+
 
 
 
