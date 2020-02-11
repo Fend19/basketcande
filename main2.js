@@ -123,6 +123,8 @@ function createProductInBasket() {
       console.log('hittar inte någon me de namnet');
     };
   };
+  let buyBtn = document.querySelector('.buyBtn');
+  console.log(buyBtn)
 };
 
 function resetPopUp () {

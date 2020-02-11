@@ -49,7 +49,7 @@ function productStorage(popUpContent, thisLocalStorageParsed, popUpBasket) {
   site.appendChild(popUpBasket)
 
   let buyBtn = document.querySelector('.buyBtn');
-  console.log('clicked buy button')
+  console.log(buyBtn)
 
   buyBtn.addEventListener('click', function () {
     popUpBasket.style.display = 'none';
