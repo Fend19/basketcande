@@ -78,16 +78,25 @@ function getLocalStorage() {
       formContainer.style.overflow = 'auto';
       formContainer.style.backgroundColor = '#000';
       formContainer.style.backgroundColor = 'rgb(0,0,0,0.3)';
+      
+      let finalCost = 0;
+      for (let i = 1; i < 13; i++) {
+        if (window.localStorage.getItem('a' + i)) {
+          let finalCount = JSON.parse(localStorage.getItem('a'+i));
+          finalCost += finalCount.value * finalCount.price;
+        }
+      }
 
       let formContent = document.createElement('form');
       formContent.className = "formContent"
+      formContent.style.zIndex = '12';
 
       formContent.innerHTML = `<h1>Soon you can decorate your wall!</h1><br> 
       <div><input type="text" placeholder="First name"><input type="text" placeholder= "Surname"><br>
       <input type="email" placeholder="Email"><input type="text" placeholder="Number"></div><br>
-      <h2>Total cost: *** SÄTT IN TOTALSUMMA *** </h2><div><input type="text" placeholder="Cardnumber"></div><br>
+      <h2>Total cost: ${finalCost} :- </h2><div><input type="text" placeholder="Cardnumber"></div><br>
       <div><input id="expirationDate" type="text" placeholder="Expiration date MM/ÅÅ"><input id="cvc" type="text" placeholder="CVC"></div>
-      <div><a href="confirmpage.html"><button class="confirm">Pay now</button></a>`;
+      <div><button onclick="window.location='confirmpage.html'" class="confirm">Pay now</button>`;
       formContainer.appendChild(formContent);
     });
   }

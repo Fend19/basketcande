@@ -53,5 +53,6 @@ for (let productsArr = 1; productsArr < 13; productsArr++) {
   }
 }
 
+window.localStorage.clear();
 
 // console.log(productsObject)
