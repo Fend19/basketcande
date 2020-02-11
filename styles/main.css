@@ -34,6 +34,12 @@ body {
   background-position: center;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -97,7 +103,6 @@ nav #basket {
       align-self: center;
   text-align: center;
   background-image: url(/images/brownbrush.png);
-  padding-bottom: 2em;
   background-repeat: no-repeat;
   background-position: center;
   height: 600px;
@@ -401,6 +406,15 @@ footer section button:hover {
   font-size: 18px;
 }
 
+.sticky-basket {
+  position: fixed;
+  right: 0;
+  top: 80px;
+  min-height: 100vh;
+  overflow: auto;
+  scroll-behavior: auto;
+}
+
 .popUpContent {
   background-color: #262626;
   margin-left: auto;
@@ -423,6 +437,7 @@ footer section button:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: auto;
 }
 
 .popUpContent h1 {
@@ -438,6 +453,7 @@ footer section button:hover {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 1em;
+  overflow: auto;
 }
 
 .popUpContent section h2 {
@@ -493,6 +509,13 @@ footer section button:hover {
   width: 100px;
   margin: 0;
   font-size: 12px;
+}
+
+.popUpContent section .textProduct .change button:hover {
+  -webkit-transition: unset;
+  transition: unset;
+  -webkit-transform: unset;
+          transform: unset;
 }
 
 .popUpContent section input {
