@@ -3,6 +3,7 @@ let totalSum = 0;
 
 window.addEventListener('click', function () {
   if (event.target == document.querySelector('.popUpBasket')) {
+    document.getElementById('basket').src = "/images/shoppingcart.svg"
     let removePopUpBasket = document.querySelector('.popUpBasket');
     document.querySelector('.popUpBasket').parentNode.removeChild(removePopUpBasket);
     totalSum = 0;
@@ -101,16 +102,11 @@ function createBasket() {
 function createPopUpBasket() {
   // Create a section for basket that gives a shoddow on everything behind it
   let popUpBasket = document.createElement('div');
-  popUpBasket.className = "popUpBasket"
-  popUpBasket.style.display = 'block';
-  popUpBasket.style.position = 'absolute';
+  popUpBasket.className = "popUpBasket sticky-basket"
   popUpBasket.style.zIndex = '10';
-  popUpBasket.style.top = '80px';
   popUpBasket.style.width = '100%';
   popUpBasket.style.height = '100%';
-  popUpBasket.style.overflow = 'auto';
-  popUpBasket.style.backgroundColor = '#000';
-  popUpBasket.style.backgroundColor = 'rgb(0,0,0,0.3)';
+  popUpBasket.scrollTop = popUpBasket.scrollHeight;
 
   // Append popUp to site
   document.querySelector('.homePage').appendChild(popUpBasket);
@@ -121,7 +117,7 @@ function createPopUpContent() {
   // Create section for basket products
   document.getElementById('basket').src = "/images/cross.svg"
   let popUpContent = document.createElement('div');
-  popUpContent.className = "popUpContent";
+  popUpContent.className = "popUpContent sticky-basket";
   popUpContent.innerHTML = `<h1>Cart</h1>`;
   document.querySelector('.popUpBasket').appendChild(popUpContent);
   createProductInBasket();

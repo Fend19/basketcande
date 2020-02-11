@@ -41,11 +41,11 @@
        if (JSON.parse(localStorage.getItem(`a${i}`))) {
          let currentValue = JSON.parse(localStorage.getItem(`a${i}`)).value;
          amountSelected = currentValue;
-        } else {
-          amountSelected = 0;
-        };
+       } else {
+         amountSelected = 0;
+       };
 
-        amountSelected += parseInt(inputValue.value);
+       amountSelected += parseInt(inputValue.value);
        productArray['a' + i].value = amountSelected;
        let newProductArray = `${JSON.stringify(productArray['a'+i])}`;
 
@@ -91,10 +91,10 @@
    }
  }
 
-//  let storageTest = document.createElement('div');
-//  storageTest.className = 'localTest';
-//  document.querySelector('main').appendChild(storageTest);
+ //  let storageTest = document.createElement('div');
+ //  storageTest.className = 'localTest';
+ //  document.querySelector('main').appendChild(storageTest);
 
-//  // Code below gets the information in local storage 
-//  let site = document.querySelector('.homePage');
-//  getLocalStorage(site)
+ //  // Code below gets the information in local storage 
+ //  let site = document.querySelector('.homePage');
+ //  getLocalStorage(site)
