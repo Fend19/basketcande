@@ -112,30 +112,3 @@
     transform: scale(1.1);
   }
 }
-
-footer {
-  display: flex;
-  padding: 3em;
-
-  #logo {
-    max-height: 160px;
-    width: 200px;
-    padding-top: 0.5em;
-    padding-right: 3em;
-  }
-
-  section {
-
-    h2 {
-      font-family: upgrade, sans-serif;
-      font-weight: 400;
-      border-bottom: #BF9C8F 1px solid;
-      color: #BF9C8F;
-    }
-
-    a {
-      text-decoration: none;
-      color: #BF9C8F;
-    }
-  }
-}

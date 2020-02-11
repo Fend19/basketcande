@@ -1,0 +1,46 @@
+footer {
+  display: flex;
+  padding: 3em;
+  align-items: center;
+
+  #logo {
+    width: 300px;
+    padding-top: 0.5em;
+    padding-right: 3em;
+  }
+
+  section {
+
+    h2 {
+      font-family: upgrade, sans-serif;
+      font-weight: 400;
+      border-bottom: #BF9C8F 1px solid;
+      color: #BF9C8F;
+    }
+
+    a {
+      text-decoration: none;
+      color: #BF9C8F;
+    }
+
+    button {
+      background-color: #BF9C8F;
+      border: none;
+      border-radius: 5px;
+      height: 30px;
+      width: 100px;
+      font-size: 20px;
+      font-family: upgrade, sans-serif;
+      font-weight: 400;
+      margin-top: 1em;
+      cursor: pointer;
+      color: #262626;
+
+      &:hover {
+        transition: ease-in 0.5s;
+        transform: scale(1.1);
+      }
+    }
+
+  }
+}

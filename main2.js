@@ -1,3 +1,4 @@
+// Total price in cart
 let totalSum = 0;
 
 window.addEventListener('click', function () {
@@ -25,11 +26,11 @@ function getLocalStorage() {
   }
   for (let i = 1; i < 13; i++) {
     if (document.querySelector(`#removeItem-a${i}`)) {
-      
+
       let removeItem = document.getElementById(`removeItem-a${i}`);
       console.log(removeItem);
       removeItem.addEventListener('click', function () {
-        let removeThis = document.querySelector('.productInBasket-a'+i);
+        let removeThis = document.querySelector('.productInBasket-a' + i);
         removeThis.parentNode.removeChild(removeThis);
         localStorage.removeItem('a' + i);
         resetPopUp();
@@ -40,12 +41,12 @@ function getLocalStorage() {
       newInputButton.addEventListener('click', function () {
         let newInputValue = document.querySelector(`.a${i}-input-changer`).value;
         console.log(newInputValue);
-        
+
         if (newInputValue == 0) {
-          let removeThis = document.querySelector('.productInBasket-a'+i);
+          let removeThis = document.querySelector('.productInBasket-a' + i);
           removeThis.parentNode.removeChild(removeThis);
           localStorage.removeItem('a' + i);
-        }else{
+        } else {
           let valueChangeLocalStorage = JSON.parse(window.localStorage.getItem('a' + i));
           valueChangeLocalStorage.value = parseInt(newInputValue);
           console.log(valueChangeLocalStorage);
@@ -63,6 +64,7 @@ function createBasket() {
   createPopUpBasket();
   createPopUpContent();
 }
+
 function createPopUpBasket() {
   // Create a section for basket that gives a shoddow on everything behind it
   let popUpBasket = document.createElement('div');
@@ -76,21 +78,21 @@ function createPopUpBasket() {
   popUpBasket.style.overflow = 'auto';
   popUpBasket.style.backgroundColor = '#000';
   popUpBasket.style.backgroundColor = 'rgb(0,0,0,0.3)';
-  
-      // Append popUp to site
+
+  // Append popUp to site
   document.querySelector('.homePage').appendChild(popUpBasket);
 }
 
 
 function createPopUpContent() {
-    // Create section for basket products
-    let popUpContent = document.createElement('div');
-    popUpContent.className = "popUpContent";
-    popUpContent.innerHTML = `<h1>Varukorg</h1>`;
-    document.querySelector('.popUpBasket').appendChild(popUpContent);
-    createProductInBasket();
+  // Create section for basket products
+  let popUpContent = document.createElement('div');
+  popUpContent.className = "popUpContent";
+  popUpContent.innerHTML = `<h1>Varukorg</h1>`;
+  document.querySelector('.popUpBasket').appendChild(popUpContent);
+  createProductInBasket();
 
-    popUpContent.innerHTML += `<br><h3 id='totalSum'>Totalkostnad: ${totalSum} :-</h3><br><button class="buyBtn">Gå till kassa</button>`;
+  popUpContent.innerHTML += `<br><h3 id='totalSum'>Totalkostnad: ${totalSum} :-</h3><br><button class="buyBtn">Gå till kassa</button>`;
 
 }
 
@@ -99,8 +101,8 @@ function createProductInBasket() {
   for (let i = 1; i < 13; i++) {
     if (window.localStorage.getItem('a' + i)) {
       let itemInLocalStorage = JSON.parse(window.localStorage.getItem('a' + i));
-      let classNameForBasketProduct = 'a'+i;
-      
+      let classNameForBasketProduct = 'a' + i;
+
 
       let itemInBasket = document.createElement('section');
       itemInBasket.className = 'productInBasket productInBasket-' + classNameForBasketProduct;
@@ -127,11 +129,11 @@ function createProductInBasket() {
   console.log(buyBtn)
 };
 
-function resetPopUp () {
+function resetPopUp() {
   totalSum = 0;
-        
+
   let removePopUpBasket = document.querySelector('.popUpBasket');
   removePopUpBasket.parentNode.removeChild(removePopUpBasket);
-  
+
   getLocalStorage();
 }
