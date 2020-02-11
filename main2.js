@@ -58,6 +58,38 @@ function getLocalStorage() {
       });
     }
   }
+  let buyBtn = document.querySelector('.buyBtn');
+  if (localStorage.length > 0) {
+
+    buyBtn.addEventListener('click', function (){
+      let home = document.querySelector(".posterArticle");
+
+      let formContainer = document.createElement('div');
+      home.appendChild(formContainer);
+
+
+      formContainer.className = "popUpBasket"
+      formContainer.style.position = 'absolute';
+      formContainer.style.zIndex = '11';
+      formContainer.style.top = '80px';
+      formContainer.style.width = '100%';
+      formContainer.style.height = '100%';
+      formContainer.style.overflow = 'auto';
+      formContainer.style.backgroundColor = '#000';
+      formContainer.style.backgroundColor = 'rgb(0,0,0,0.3)';
+    
+      let formContent = document.createElement('form');
+      formContent.className = "formContent"
+    
+      formContent.innerHTML = `<h1>Snart får din vägg ett nytt utseende!</h1><br> 
+      <div><input type="text" placeholder="Förnamn"><input type="text" placeholder= "Efternamn"><br>
+      <input type="email" placeholder="Email"><input type="text" placeholder="Mobilnr"></div><br>
+      <h2>Totalsumma: *** SÄTT IN TOTALSUMMA *** </h2><div><input type="text" placeholder="Kortnummer"></div><br>
+      <div><input id="expirationDate" type="text" placeholder="Utgångsdatum MM/ÅÅ"><input id="cvc" type="text" placeholder="CVC"></div>
+      <div><a href="confirmpage.html"><button class="confirm">Betala nu</button></a>`;
+      formContainer.appendChild(formContent);
+    });
+  }
 }
 
 function createBasket() {
@@ -125,8 +157,6 @@ function createProductInBasket() {
       console.log('hittar inte någon me de namnet');
     };
   };
-  let buyBtn = document.querySelector('.buyBtn');
-  console.log(buyBtn)
 };
 
 function resetPopUp() {
