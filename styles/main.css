@@ -389,7 +389,8 @@ footer section button:hover {
 }
 
 .tableProductInfo td:nth-of-type(2),
-.tableProductInfo td:nth-of-type(3) {
+.tableProductInfo td:nth-of-type(3),
+.tableProductInfo td:nth-of-type(4) {
   width: 80px;
   text-align: center;
 }

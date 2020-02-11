@@ -19,7 +19,7 @@ let productsInfoCollector = document.createElement('div');
 productsInfoCollector.className = 'productsInfoCollector';
 let tableProductInfo = document.createElement('table');
 tableProductInfo.className = 'tableProductInfo';
-tableProductInfo.innerHTML += `<tr><th>Title</th><th>Amount</th><th>Price</th></tr>`;
+tableProductInfo.innerHTML += `<tr><th>Title</th><th>Amount</th><th>Price</th><th>Total price</th></tr>`;
 confirmContent.appendChild(productsInfoCollector);
 
 for (let productsArr = 1; productsArr < 13; productsArr++) {
@@ -29,7 +29,7 @@ for (let productsArr = 1; productsArr < 13; productsArr++) {
     let productID = 'a' + productsArr;
     let totalPrice = productsObject.value * productsObject.price;
     console.log('product ID: ' + productID + ' productsObject.title: ' + productsObject.title)
-    tableProductInfo.innerHTML += `<tr><td>${productsObject.title}</td><td>${productsObject.value}</td><td>${totalPrice}:-</td></tr>
+    tableProductInfo.innerHTML += `<tr><td>${productsObject.title}</td><td>${productsObject.value}</td><td>${productsObject.price}:-</td><td>${totalPrice}:-</td></tr>
     `;
 
     productsInfoCollector.appendChild(tableProductInfo)
