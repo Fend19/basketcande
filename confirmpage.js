@@ -10,7 +10,6 @@ for (let productsArr = 1; productsArr < 13; productsArr++) {
     let productsCollector = document.querySelector('.productsCollector')
     let productsObject = JSON.parse(localStorage.getItem('a' + productsArr));
     let productID = 'a' + productsArr;
-    console.log('product ID: ' + productID + ' productsObject.title: ' + productsObject.title)
     productsCollector.innerHTML += `<section class="productSectionStyle"><img class="imgWrapper" src="${productsObject.image}" alt="Bild på ${productsObject.title}"><p class="posterTitle">${productsObject.title} (${productsObject.value})</p></section>`
   }
 }
@@ -28,10 +27,8 @@ for (let productsArr = 1; productsArr < 13; productsArr++) {
     let productsObject = JSON.parse(localStorage.getItem('a' + productsArr));
     let productID = 'a' + productsArr;
     let totalPrice = productsObject.value * productsObject.price;
-    console.log('product ID: ' + productID + ' productsObject.title: ' + productsObject.title)
     tableProductInfo.innerHTML += `<tr><td>${productsObject.title}</td><td>${productsObject.value}</td><td>${productsObject.price}:-</td><td>${totalPrice}:-</td></tr>
     `;
-
     productsInfoCollector.appendChild(tableProductInfo)
   }
 }
@@ -46,13 +43,9 @@ for (let productsArr = 1; productsArr < 13; productsArr++) {
     let productsObject = JSON.parse(localStorage.getItem('a' + productsArr));
     let productID = 'a' + productsArr;
     totalPrice += productsObject.value * productsObject.price;
-    console.log('product ID: ' + productID + ' productsObject.title: ' + productsObject.title)
-
     totalCost.innerHTML = `<h2>Total cost: ${totalPrice}:-</h2>`;
     tableProductInfo.appendChild(totalCost)
   }
 }
 
 window.localStorage.clear();
-
-// console.log(productsObject)

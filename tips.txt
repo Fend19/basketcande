@@ -1,7 +1,0 @@
-Create a localStorageSync function *Thanks Patric*
-And a function for check localStorage when window is ready. 
-
-
-h1 cart poisition fixed
-
-container for total price cart fixed

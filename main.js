@@ -1,154 +1,171 @@
-// Code below gets the information in local storage 
-function getLocalStorage(site) {
+// Total price in cart
+let totalSum = 0;
+
+window.addEventListener('click', function () {
+  if (event.target == document.querySelector('.popUpBasket')) {
+    document.getElementById('basket').src = "/images/shoppingcart.svg"
+    let removePopUpBasket = document.querySelector('.popUpBasket');
+    document.querySelector('.popUpBasket').parentNode.removeChild(removePopUpBasket);
+    totalSum = 0;
+  }
+});
+
+let basketBtn = document.getElementById('basket');
+// Add eventlistener to basket to open popUp
+basketBtn.addEventListener('click', getLocalStorage);
+
+function getLocalStorage() {
+  if (document.querySelector('.popUpBasket')) {
+    document.getElementById('basket').src = "/images/shoppingcart.svg"
+    let removePopUpBasket = document.querySelector('.popUpBasket');
+    removePopUpBasket.style.display = 'none';
+    removePopUpBasket.parentNode.removeChild(removePopUpBasket);
+    totalSum = 0;
+
+  } else {
+    createBasket();
+  }
+
   for (let i = 1; i < 13; i++) {
-    if (JSON.parse(window.localStorage.getItem('a' + i))) {
-      let thisLocalStorage = window.localStorage.getItem('a' + i);
-      let thisLocalStorageParsed = JSON.parse(thisLocalStorage);
-      // console.log(thisLocalStorageParsed['title']);
+    if (document.querySelector(`#removeItem-a${i}`)) {
 
-      // Show popUp and store localStorage items
-      popUp(thisLocalStorageParsed);
-    } else {
-      //  console.log('hittar inte någon me de namnet');
+      let removeItem = document.getElementById(`removeItem-a${i}`);
+      removeItem.addEventListener('click', function () {
+        let removeThis = document.querySelector('.productInBasket-a' + i);
+        removeThis.parentNode.removeChild(removeThis);
+        localStorage.removeItem('a' + i);
+        resetPopUp();
+      });
 
+      let newInputButton = document.querySelector(`.correctAmount-a${i}`);
+      newInputButton.addEventListener('click', function () {
+        let newInputValue = document.querySelector(`.a${i}-input-changer`).value;
 
+        if (newInputValue == 0) {
+          let removeThis = document.querySelector('.productInBasket-a' + i);
+          removeThis.parentNode.removeChild(removeThis);
+          localStorage.removeItem('a' + i);
+        } else {
+          let valueChangeLocalStorage = JSON.parse(window.localStorage.getItem('a' + i));
+          valueChangeLocalStorage.value = parseInt(newInputValue);
+          window.localStorage.setItem('a' + i, JSON.stringify(valueChangeLocalStorage));
+        }
+
+        resetPopUp();
+      });
     }
+  }
+  let buyBtn = document.querySelector('.buyBtn');
+  if (localStorage.length > 0) {
+
+    buyBtn.addEventListener('click', function () {
+
+      let removePopUpBasket = document.querySelector('.popUpBasket');
+      removePopUpBasket.parentNode.removeChild(removePopUpBasket);
+      document.getElementById('basket').src = "/images/shoppingcart.svg"
+
+      let home = document.querySelector(".posterArticle");
+
+      let formContainer = document.createElement('div');
+      home.appendChild(formContainer);
+
+
+      formContainer.className = "popUpBasket"
+      formContainer.style.position = 'absolute';
+      formContainer.style.zIndex = '15';
+      formContainer.style.top = '80px';
+      formContainer.style.width = '100%';
+      formContainer.style.height = '100%';
+      formContainer.style.overflow = 'auto';
+
+      let finalCost = 0;
+      for (let i = 1; i < 13; i++) {
+        if (window.localStorage.getItem('a' + i)) {
+          let finalCount = JSON.parse(localStorage.getItem('a' + i));
+          finalCost += finalCount.value * finalCount.price;
+        }
+      }
+
+      let formContent = document.createElement('form');
+      formContent.className = "formContent"
+      formContent.style.zIndex = '12';
+
+      formContent.innerHTML = `<h1>Soon you can decorate your wall!</h1><br> 
+      <div><input type="text" placeholder="First name"><input type="text" placeholder= "Surname"><br>
+      <input type="email" placeholder="Email"><input type="text" placeholder="Number"></div><br>
+      <h2>Total cost: ${finalCost} :- </h2><div><input type="text" placeholder="Cardnumber"></div><br>
+      <div><input id="expirationDate" type="text" placeholder="Expiration date MM/ÅÅ"><input id="cvc" type="text" placeholder="CVC"></div>
+      <div><button onclick="window.location='confirmpage.html'" class="confirm">Pay now</button>`;
+      formContainer.appendChild(formContent);
+    });
   }
 }
 
-// Function below appends products to popUp (basket)
-function productStorage(popUpContent, thisLocalStorageParsed, popUpBasket) {
-  // Empty basket for every click
-  popUpContent.innerHTML = "";
-  popUpContent.innerHTML += `<h1>Varukorg</h1>`
+function createBasket() {
+  createPopUpBasket();
+  createPopUpContent();
+}
 
-
-  // Loops over localStorage to see what's in it and creates sections for each product
-  // ***** WHY DOES IT CREATES 2 BASKETS(?((?(?)?)?)?) SO FCKING ANGRY ******
-  for (let i = 1; i < localStorage.length; i++) {
-    // console.log(thisLocalStorageParsed);
-
-    let basketSection = document.createElement('section');
-    basketSection.className = 'productBasket-' + [i];
-    basketSection.innerHTML = `<div class="basketImg"><img class='imgWrapper' src='${thisLocalStorageParsed['image']}'></div><br>
-    <div><h2>${thisLocalStorageParsed['title']}</h2><br>
-    <input type="number" value="${thisLocalStorageParsed['value']}"><br>
-    <h2>${thisLocalStorageParsed['price'] * thisLocalStorageParsed['value']}:-</h2>
-    </div>`
-
-    popUpContent.appendChild(basketSection)
-    // console.log(localStorage.getItem(localStorage.key(i).title))
-  }
-
-
-  popUpContent.innerHTML += `<br><h3>Totalkostnad: TOTALKOSTNAD IN HÄR :-</h3><br><button class="buyBtn">Gå till kassa</button>`;
-  popUpBasket.appendChild(popUpContent)
-
+function createPopUpBasket() {
+  // Create a section for basket that gives a shoddow on everything behind it
+  let popUpBasket = document.createElement('div');
+  popUpBasket.className = "popUpBasket sticky-basket";
 
   // Append popUp to site
-  site.appendChild(popUpBasket)
-
-  let buyBtn = document.querySelector('.buyBtn');
-  console.log(buyBtn)
-
-  buyBtn.addEventListener('click', function () {
-    popUpBasket.style.display = 'none';
-    form(site, buyBtn)
-  })
+  document.querySelector('.homePage').appendChild(popUpBasket);
 }
 
 
-// ******* Show PopUp *******
-function popUp(thisLocalStorageParsed) {
-  let popUpBasket = document.createElement('div');
-  popUpBasket.className = "popUpBasket"
-  popUpBasket.style.display = 'none';
-  popUpBasket.style.position = 'absolute';
-  popUpBasket.style.zIndex = '10';
-  popUpBasket.style.top = '80px';
-  popUpBasket.style.width = '100%';
-  popUpBasket.style.height = '100%';
-  popUpBasket.style.overflow = 'auto';
-  popUpBasket.style.backgroundColor = '#000';
-  popUpBasket.style.backgroundColor = 'rgb(0,0,0,0.3)';
-
-  // Create a section for basket products
+function createPopUpContent() {
+  // Create section for basket products
+  document.getElementById('basket').src = "/images/cross.svg"
   let popUpContent = document.createElement('div');
-  popUpContent.className = "popUpContent"
+  popUpContent.className = "popUpContent sticky-basket";
+  popUpContent.innerHTML = `<div class="CartTitle"><h1>Cart</h1></div>`;
+  document.querySelector('.popUpBasket').appendChild(popUpContent);
+  createProductInBasket();
 
-  function showPopUp(thisLocalStorageParsed) {
-    if (popUpBasket.style.display === 'block') {
-      popUpBasket.style.display = 'none';
-    } else if (popUpBasket.style.display === 'none') {
-      popUpBasket.style.display = 'block';
-    }
-
-    productStorage(popUpContent, thisLocalStorageParsed, popUpBasket)
-  }
-
-  // Basket button, click it to open basket *PopUp*
-  let basketBtn = document.getElementById('basket');
-  // Add eventlistener to basket to open popUp
-  basketBtn.addEventListener('click', function () {
-    showPopUp(thisLocalStorageParsed)
-    console.log('clicked basketButton');
-
-  })
-
-  // When the user click anywhere else, close popup
-  window.addEventListener('click', function () {
-    if (event.target == popUpBasket) {
-      popUpBasket.style.display = "none";
-    }
+  popUpContent.innerHTML += `<div class="totalPriceSticker"><h3 id='totalSum'>Total cost: ${totalSum} :-</h3><br><button class="buyBtn">Go to checkout</button><button class="clearBasket">Clear cart</div>`;
+  let clearBasket = document.querySelector('.clearBasket')
+  clearBasket.addEventListener('click', function () {
+    totalSum = 0;
+    localStorage.clear();
+    createPopUpContent();
   })
 }
 
-// ******* Show form *******
-function form(site, button) {
-  let formContainer = document.createElement('div');
-  formContainer.className = "popUpBasket"
-  formContainer.style.display = 'none';
-  formContainer.style.position = 'absolute';
-  formContainer.style.zIndex = '10';
-  formContainer.style.top = '80px';
-  formContainer.style.width = '100%';
-  formContainer.style.height = '100%';
-  formContainer.style.overflow = 'auto';
-  formContainer.style.backgroundColor = '#000';
-  formContainer.style.backgroundColor = 'rgb(0,0,0,0.3)';
+function createProductInBasket() {
+  let sectionContainer = document.createElement('section');
+  sectionContainer.className = 'sectionContainer';
+  document.querySelector('.popUpContent').appendChild(sectionContainer);
+  // Creation of products in the basket
+  for (let i = 1; i < 13; i++) {
+    if (window.localStorage.getItem('a' + i)) {
+      let itemInLocalStorage = JSON.parse(window.localStorage.getItem('a' + i));
+      let classNameForBasketProduct = 'a' + i;
 
-  let formContent = document.createElement('form');
-  formContent.className = "formContent"
-
-  formContent.innerHTML = `<h1>Snart får din vägg ett nytt utseende!</h1><br> 
-  <div><input type="text" placeholder="Förnamn"><input type="text" placeholder= "Efternamn"><br>
-  <input type="email" placeholder="Email"><input type="text" placeholder="Mobilnr"></div><br>
-  <h2>Totalsumma: *** SÄTT IN TOTALSUMMA *** </h2><div><input type="text" placeholder="Kortnummer"></div><br>
-  <div><input id="expirationDate" type="text" placeholder="Utgångsdatum MM/ÅÅ"><input id="cvc" type="text" placeholder="CVC"></div>
-  <div><button class="confirm">Betala nu</button>`;
-
-  formContainer.appendChild(formContent)
-
-  function showForm() {
-    if (formContainer.style.display === 'block') {
-      formContainer.style.display = 'none';
-    } else if (formContainer.style.display === 'none') {
-      formContainer.style.display = 'block';
+      let itemInBasket = document.createElement('section');
+      itemInBasket.className = 'productInBasket productInBasket-' + classNameForBasketProduct;
+      itemInBasket.innerHTML = `<div class="basketImg"><img class='imgWrapper' src='${itemInLocalStorage.image}'></div><br>
+      <div class="textProduct"><h2>${itemInLocalStorage.title}</h2>
+      <br>
+      <div class="change"><input class='${classNameForBasketProduct}-input-changer' type="number" min='0' value="${itemInLocalStorage.value}">
+      <button class='buyButtonStyler correctAmount-a${i}'>Change amount</button></div>
+      <button id='removeItem-a${i}'>Delete</button>
+      <br>
+      <h2 class='h2-${classNameForBasketProduct}'>${itemInLocalStorage.price * itemInLocalStorage.value}:-</h2>
+      </div>`;
+      sectionContainer.appendChild(itemInBasket)
+      totalSum += (itemInLocalStorage.price * itemInLocalStorage.value);
     }
-  }
+  };
+};
 
-  //Add eventlistener to basket to open popUp
-  button.addEventListener('click', function () {
-    showForm()
-  })
+function resetPopUp() {
+  totalSum = 0;
 
-  // When the user click anywhere else, close popup
-  window.addEventListener('click', function () {
-    if (event.target == formContainer) {
-      formContainer.style.display = "none";
-    }
-  })
+  let removePopUpBasket = document.querySelector('.popUpBasket');
+  removePopUpBasket.parentNode.removeChild(removePopUpBasket);
 
-  // Append popUp to 
-  site.appendChild(formContainer)
+  getLocalStorage();
 }
