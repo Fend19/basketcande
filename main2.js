@@ -80,8 +80,6 @@ function getLocalStorage() {
       formContainer.style.width = '100%';
       formContainer.style.height = '100%';
       formContainer.style.overflow = 'auto';
-      formContainer.style.backgroundColor = '#000';
-      formContainer.style.backgroundColor = 'rgb(0,0,0,0.3)';
 
       let finalCost = 0;
       for (let i = 1; i < 13; i++) {
