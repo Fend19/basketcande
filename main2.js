@@ -67,6 +67,11 @@ function getLocalStorage() {
   if (localStorage.length > 0) {
 
     buyBtn.addEventListener('click', function () {
+
+      let removePopUpBasket = document.querySelector('.popUpBasket');
+      removePopUpBasket.parentNode.removeChild(removePopUpBasket);
+      document.getElementById('basket').src = "/images/shoppingcart.svg"
+
       let home = document.querySelector(".posterArticle");
 
       let formContainer = document.createElement('div');
