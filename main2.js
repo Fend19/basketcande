@@ -3,6 +3,8 @@ let totalSum = 0;
 
 window.addEventListener('click', function () {
   if (event.target == document.querySelector('.popUpBasket')) {
+    document.getElementById('basket').src = "/images/shoppingcart.svg"
+    pop
     let removePopUpBasket = document.querySelector('.popUpBasket');
     document.querySelector('.popUpBasket').parentNode.removeChild(removePopUpBasket);
     totalSum = 0;
@@ -20,12 +22,14 @@ function getLocalStorage() {
     document.getElementById('basket').src = "/images/shoppingcart.svg"
     console.log('popUpBasket hittas och tas bort');
     let removePopUpBasket = document.querySelector('.popUpBasket');
+    removePopUpBasket.style.display = 'none';
     removePopUpBasket.parentNode.removeChild(removePopUpBasket);
     totalSum = 0;
 
   } else {
     createBasket();
   }
+
   for (let i = 1; i < 13; i++) {
     if (document.querySelector(`#removeItem-a${i}`)) {
 
@@ -111,7 +115,7 @@ function createBasket() {
 function createPopUpBasket() {
   // Create a section for basket that gives a shoddow on everything behind it
   let popUpBasket = document.createElement('div');
-  popUpBasket.className = "popUpBasket sticky-basket"
+  popUpBasket.className = "popUpBasket sticky-basket";
 
   // Append popUp to site
   document.querySelector('.homePage').appendChild(popUpBasket);
@@ -132,12 +136,14 @@ function createPopUpContent() {
 }
 
 function createProductInBasket() {
+  let sectionContainer = document.createElement('section');
+  sectionContainer.className = 'sectionContainer';
+  document.querySelector('.popUpContent').appendChild(sectionContainer);
   // Creation of products in the basket
   for (let i = 1; i < 13; i++) {
     if (window.localStorage.getItem('a' + i)) {
       let itemInLocalStorage = JSON.parse(window.localStorage.getItem('a' + i));
       let classNameForBasketProduct = 'a' + i;
-
 
       let itemInBasket = document.createElement('section');
       itemInBasket.className = 'productInBasket productInBasket-' + classNameForBasketProduct;
@@ -150,7 +156,7 @@ function createProductInBasket() {
       <br>
       <h2 class='h2-${classNameForBasketProduct}'>${itemInLocalStorage.price * itemInLocalStorage.value}:-</h2>
       </div>`;
-      document.querySelector('.popUpContent').appendChild(itemInBasket);
+      sectionContainer.appendChild(itemInBasket)
       console.log(totalSum);
       totalSum += (itemInLocalStorage.price * itemInLocalStorage.value);
       console.log(itemInLocalStorage.price);
