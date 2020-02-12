@@ -4,7 +4,6 @@ let totalSum = 0;
 window.addEventListener('click', function () {
   if (event.target == document.querySelector('.popUpBasket')) {
     document.getElementById('basket').src = "/images/shoppingcart.svg"
-    pop
     let removePopUpBasket = document.querySelector('.popUpBasket');
     document.querySelector('.popUpBasket').parentNode.removeChild(removePopUpBasket);
     totalSum = 0;
