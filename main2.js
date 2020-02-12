@@ -130,8 +130,13 @@ function createPopUpContent() {
   document.querySelector('.popUpBasket').appendChild(popUpContent);
   createProductInBasket();
 
-  popUpContent.innerHTML += `<div class="totalPriceSticker"><h3 id='totalSum'>Total cost: ${totalSum} :-</h3><br><button class="buyBtn">Go to checkout</button></div>`;
-
+  popUpContent.innerHTML += `<div class="totalPriceSticker"><h3 id='totalSum'>Total cost: ${totalSum} :-</h3><br><button class="buyBtn">Go to checkout</button><button class="clearBasket">Clear cart</div>`;
+  let clearBasket = document.querySelector('.clearBasket')
+  clearBasket.addEventListener('click', function () {
+    totalSum = 0;
+    localStorage.clear();
+    createPopUpContent();
+  })
 }
 
 function createProductInBasket() {
