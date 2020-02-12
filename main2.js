@@ -3,7 +3,6 @@ let totalSum = 0;
 
 window.addEventListener('click', function () {
   if (event.target == document.querySelector('.popUpBasket')) {
-    document.getElementById('basket').src = "/images/shoppingcart.svg"
     let removePopUpBasket = document.querySelector('.popUpBasket');
     document.querySelector('.popUpBasket').parentNode.removeChild(removePopUpBasket);
     totalSum = 0;
@@ -23,6 +22,7 @@ function getLocalStorage() {
     let removePopUpBasket = document.querySelector('.popUpBasket');
     removePopUpBasket.parentNode.removeChild(removePopUpBasket);
     totalSum = 0;
+
   } else {
     createBasket();
   }
@@ -71,12 +71,14 @@ function getLocalStorage() {
 
 
       formContainer.className = "popUpBasket"
-      formContainer.style.position = 'fixed';
-      formContainer.style.zIndex = '11';
+      formContainer.style.position = 'absolute';
+      formContainer.style.zIndex = '15';
       formContainer.style.top = '80px';
       formContainer.style.width = '100%';
       formContainer.style.height = '100%';
       formContainer.style.overflow = 'auto';
+      formContainer.style.backgroundColor = '#000';
+      formContainer.style.backgroundColor = 'rgb(0,0,0,0.3)';
 
       let finalCost = 0;
       for (let i = 1; i < 13; i++) {
@@ -110,10 +112,6 @@ function createPopUpBasket() {
   // Create a section for basket that gives a shoddow on everything behind it
   let popUpBasket = document.createElement('div');
   popUpBasket.className = "popUpBasket sticky-basket"
-  popUpBasket.style.zIndex = '10';
-  popUpBasket.style.width = '100%';
-  popUpBasket.style.height = '100%';
-  popUpBasket.scrollTop = popUpBasket.scrollHeight;
 
   // Append popUp to site
   document.querySelector('.homePage').appendChild(popUpBasket);
@@ -125,11 +123,11 @@ function createPopUpContent() {
   document.getElementById('basket').src = "/images/cross.svg"
   let popUpContent = document.createElement('div');
   popUpContent.className = "popUpContent sticky-basket";
-  popUpContent.innerHTML = `<h1>Cart</h1>`;
+  popUpContent.innerHTML = `<div class="CartTitle"><h1>Cart</h1></div>`;
   document.querySelector('.popUpBasket').appendChild(popUpContent);
   createProductInBasket();
 
-  popUpContent.innerHTML += `<br><h3 id='totalSum'>Total cost: ${totalSum} :-</h3><br><button class="buyBtn">Go to checkout</button>`;
+  popUpContent.innerHTML += `<div class="totalPriceSticker"><h3 id='totalSum'>Total cost: ${totalSum} :-</h3><br><button class="buyBtn">Go to checkout</button></div>`;
 
 }
 

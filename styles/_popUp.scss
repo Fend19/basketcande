@@ -1,10 +1,33 @@
 .sticky-basket {
   position: fixed;
-  right: 0;
   top: 80px;
-  min-height: 100vh;
-  overflow: auto;
-  scroll-behavior: auto;
+  right: 0;
+  width: 100%;
+  height: 100&;
+  overflow: scroll;
+
+}
+
+.cartTitle {
+  position: fixed;
+  right: 0;
+  z-index: 14;
+  width: 30vw;
+  padding: 1em 0 2em 0;
+  background-color: #262626;
+  color: #F2EAE4;
+}
+
+.totalPriceSticker {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 13;
+  width: 30vw;
+  background-color: #262626;
+  text-align: center;
+  padding: 2em 0;
+  border-top: 1px solid black;
 }
 
 .popUpContent {
@@ -19,7 +42,6 @@
   z-index: 12;
   justify-content: center;
   align-items: center;
-  overflow: auto;
 
   h1 {
     font-family: flood-std, sans-serif;
@@ -30,7 +52,6 @@
     display: flex;
     align-items: center;
     margin-bottom: 1em;
-    overflow: auto;
 
     h2 {
       font-size: 16px;
@@ -70,11 +91,6 @@
           width: 100px;
           margin: 0;
           font-size: 12px;
-
-          &:hover {
-            transition: unset;
-            transform: unset;
-          }
         }
       }
     }
@@ -104,6 +120,11 @@
     font-size: 16px;
     border-radius: 5px;
   }
+
+  // button:hover {
+  //   transition: ease-in 0.5s;
+  //   transform: scale(1.1);
+  // }
 }
 
 .formContent {
