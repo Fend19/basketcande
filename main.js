@@ -169,3 +169,26 @@ function resetPopUp() {
 
   getLocalStorage();
 }
+
+// animate shoppingcart Icon function
+function animateCart() {
+  console.log('it works!')
+  let cartIcon = document.getElementById('basket')
+  cartIcon.style.animationName = 'iconAnimate';
+  cartIcon.style.animationDuration = '0.3s';
+  cartIcon.style.animationIterationCount = '6';
+  cartIcon.style.transform = 'scale(1.1)';
+  cartIcon.style.animationTimingFunction = 'ease-in-out';
+  cartIcon.style.animationDirection = 'alternate';
+
+  animate(cartIcon)
+}
+
+function animate(cartIcon) {
+  cartIcon.style.animationName = 'unset';
+  cartIcon.style.animationDuration = 'unset';
+  cartIcon.style.animationIterationCount = 'unset';
+  cartIcon.style.transform = 'unset';
+  cartIcon.style.animationTimingFunction = 'unset';
+  cartIcon.style.animationDirection = 'unset';
+}
